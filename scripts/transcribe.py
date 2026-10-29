@@ -12,6 +12,7 @@ import urllib.request
 import wave
 
 MODEL = "nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B"
+MAX_TOKENS = 32768
 PROMPT = (
     "Transcribe this audio with punctuation and capitalization. "
     "Include all spoken words and verbal fillers. "
@@ -41,7 +42,7 @@ def request_payload(audio: bytes) -> dict:
         ]}],
         "temperature": 0,
         "top_p": 1.0,
-        "max_tokens": 16384,
+        "max_tokens": MAX_TOKENS,
         "stream": False,
         "n": 1,
         "chat_template_kwargs": {"enable_thinking": False},
@@ -53,6 +54,12 @@ def request_payload(audio: bytes) -> dict:
 
 
 def normalize(response: dict, audio_path: Path, audio: bytes, duration: float) -> dict:
+    choice = response["choices"][0]
+    if choice.get("finish_reason") == "length":
+        raise ValueError(
+            f"Transcript hit the {MAX_TOKENS}-token output limit; no result was saved. "
+            "Split the recording into shorter clips and transcribe each one."
+        )
     alignment = response.get("ctc_timestamps")
     if not isinstance(alignment, dict):
         raise ValueError("Server omitted ctc_timestamps; check the V1 runner and CTC middleware")
@@ -70,7 +77,7 @@ def normalize(response: dict, audio_path: Path, audio: bytes, duration: float) -
             raise ValueError(f"Invalid aligned word: {item!r}")
         words.append({"word": word, "start": start, "end": end,
                       "speaker": str(item.get("speaker") or "spk:0")})
-    content = response["choices"][0]["message"]["content"]
+    content = choice["message"]["content"]
     if not isinstance(content, str):
         raise ValueError("Server returned a non-text transcript")
     return {

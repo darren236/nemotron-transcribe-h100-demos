@@ -24,36 +24,29 @@ Open the URL printed by `login` in a browser already signed in to the same Brev 
 
 ## Install on the H100
 
-The image had Ubuntu Python 3.12.3 and an NVIDIA driver reporting CUDA support. `python3 -m venv` initially failed because Ubuntu's `ensurepip` package was absent. The setup instead used the official `uv` installer:
+The image had Ubuntu Python 3.12.3 and an NVIDIA driver reporting CUDA support. `python3 -m venv` initially failed because Ubuntu's `ensurepip` package was absent. The repeatable setup below uses the official `uv` installer and pins the exact revisions used for the demos:
 
 ```bash
+sudo apt-get update
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y git curl python3.12-dev ffmpeg
 curl -LsSf https://astral.sh/uv/install.sh | sh
 export PATH="$HOME/.local/bin:$PATH"
 git clone https://github.com/NVIDIA-NeMo/Speech.git ~/nemo-speech
 cd ~/nemo-speech
-git rev-parse HEAD
-uv venv --python 3.13 .venv
-UV_PROJECT_ENVIRONMENT="$PWD/.venv" uv sync --extra asr --extra vllm --locked --no-install-project
+git checkout --detach 88846dcfa90233dce178cc3d5d9dd6065cdc8380
+UV_PROJECT_ENVIRONMENT="$PWD/.venv" uv sync --python 3.12 --extra asr --extra vllm --locked --no-install-project
 uv pip install --python .venv/bin/python --no-deps -e .
 uv pip install --python .venv/bin/python --no-deps av==19.0.2 opencv-python-headless==5.0.0.93
 source .venv/bin/activate
 python -c 'import sys, vllm; print(sys.version, vllm.__version__)'
-hf download nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B --local-dir ./NVIDIA-Nemotron-3.5-Transcribe-30B-A4B
-```
-
-The actual `uv sync` recreated `.venv` with Python **3.12.3**, despite the preceding `uv venv --python 3.13`. The model then loaded under 3.12.3, but use `uv sync --python 3.13` if matching the model card's example is required for another run. The checked versions for this run were NeMo Speech commit `88846dcfa90233dce178cc3d5d9dd6065cdc8380`, vLLM `0.32.0`, and model revision `9d8cd6b79bfdd427b6558a5fdbf76fcaf8c75341`. The checkpoint was one 67,496,013,734-byte `model.safetensors` file (62.86 GiB), and the Hugging Face download took 10 minutes 27 seconds. No Hugging Face token was used.
-
-The clone and `hf download` commands above used the repositories' then-current revisions. For a future repeat of this exact run, pin them explicitly before installation/download:
-
-```bash
-cd ~/nemo-speech
-git checkout 88846dcfa90233dce178cc3d5d9dd6065cdc8380
 hf download nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B \
   --revision 9d8cd6b79bfdd427b6558a5fdbf76fcaf8c75341 \
   --local-dir ./NVIDIA-Nemotron-3.5-Transcribe-30B-A4B
 ```
 
-`scripts/setup_h100.sh` contains the commands used by this project. `brev exec nemotron-transcribe-v1 @scripts/setup_h100.sh` sent it to the instance. The Hugging Face CLI left a `.incomplete` file at the full size for several minutes before finalizing; the transfer completed normally, so do not rename a partial checkpoint just because its size matches the published size.
+In the original run, `uv venv --python 3.13` preceded `uv sync`, but `uv sync` recreated `.venv` with Python **3.12.3**. The model loaded under 3.12.3, so the repeatable setup requests Python 3.12 directly. The checked versions for this run were NeMo Speech commit `88846dcfa90233dce178cc3d5d9dd6065cdc8380`, vLLM `0.32.0`, and model revision `9d8cd6b79bfdd427b6558a5fdbf76fcaf8c75341`. The checkpoint was one 67,496,013,734-byte `model.safetensors` file (62.86 GiB), and the Hugging Face download took 10 minutes 27 seconds. No Hugging Face token was used.
+
+`scripts/setup_h100.sh` automates the pinned setup. The original run sent its earlier version with `brev exec nemotron-transcribe-v1 @scripts/setup_h100.sh`. The Hugging Face CLI left a `.incomplete` file at the full size for several minutes before finalizing; the transfer completed normally, so do not rename a partial checkpoint just because its size matches the published size.
 
 ## Start the server and infer
 
@@ -83,6 +76,8 @@ python3 ~/nemotron-demo/transcribe.py ~/nemotron-demo/demo_conversation.wav \
 ```
 
 The request asks for punctuation, speaker tags, and word timestamps with `capture_ctc_timestamps=true`, temperature 0 and reasoning off. The script fails if CTC alignment reports an error or words are missing. Copy the JSON back to `runs/demo_conversation.json`, then run `scripts/finalize_run.py` to check the audio hash and produce the SRT and manifest. `scripts/build_gallery.py` generates the props for all three caption clips.
+
+The current inference script requests up to 32,768 output tokens, above [NVIDIA's estimate of about 20,000](https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B) for a dense one-hour transcript. It rejects a response that ends at the token limit instead of saving partial output as a complete result. Split such a recording into shorter clips before retrying.
 
 One local finalization sequence, from the repository root:
 

@@ -2,3 +2,5 @@ __pycache__/
 *.pyc
 video/node_modules/
 runs/reproduced/
+models/
+.venv-demo/

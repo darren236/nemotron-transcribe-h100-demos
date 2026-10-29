@@ -34,15 +34,14 @@ The pinned revisions below match the saved demo results. The first download can 
 
 ```bash
 sudo apt-get update
-sudo apt-get install -y git curl python3.12-dev
+sudo apt-get install -y git curl python3.12-dev ffmpeg
 curl -LsSf https://astral.sh/uv/install.sh | sh
 export PATH="$HOME/.local/bin:$PATH"
 
 git clone https://github.com/NVIDIA-NeMo/Speech.git ~/nemo-speech
 cd ~/nemo-speech
-git checkout 88846dcfa90233dce178cc3d5d9dd6065cdc8380
-uv venv --python 3.13 .venv
-UV_PROJECT_ENVIRONMENT="$PWD/.venv" uv sync --extra asr --extra vllm --locked --no-install-project
+git checkout --detach 88846dcfa90233dce178cc3d5d9dd6065cdc8380
+UV_PROJECT_ENVIRONMENT="$PWD/.venv" uv sync --python 3.12 --extra asr --extra vllm --locked --no-install-project
 uv pip install --python .venv/bin/python --no-deps -e .
 uv pip install --python .venv/bin/python --no-deps av==19.0.2 opencv-python-headless==5.0.0.93
 source .venv/bin/activate
@@ -53,7 +52,7 @@ hf download nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B \
   --local-dir ./NVIDIA-Nemotron-3.5-Transcribe-30B-A4B
 ```
 
-The recorded `uv sync` selected Python 3.12.3 and vLLM 0.32.0. Wait for `hf download` to finish even if a full-sized `.incomplete` file appears. The model checkpoint stays on the H100; it is not in this repository.
+The recorded `uv sync` selected Python 3.12.3 and vLLM 0.32.0. You can also run `bash scripts/setup_h100.sh` from this repository's root to perform the same pinned setup. Wait for `hf download` to finish even if a full-sized `.incomplete` file appears. The model checkpoint stays on the H100; it is not in this repository.
 
 ### 2. Start the inference server
 
@@ -113,6 +112,8 @@ python3 scripts/export_srt.py runs/reproduced/artemis.json assets/artemis_housto
 
 Each JSON includes `text`, word `start`/`end` times and speaker tags in `words`, the original `raw_response`, and the SHA-256 of the exact input WAV. Check that `alignment.error` is `null` before using the word times. The saved results are examples of model use, not accuracy or speed benchmarks.
 
+The script allows up to 32,768 output tokens for a recording up to one hour. [NVIDIA notes](https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B) that a dense one-hour transcript may need about 20,000. If the server ends the response at the token limit, the script raises an error without saving a partial transcript; split the recording into shorter clips and run each separately.
+
 ### 4. Use your own audio
 
 Convert a recording to mono, 16 kHz, 16-bit PCM WAV, then transcribe and export captions. Use a filename without spaces for these commands:
@@ -121,6 +122,21 @@ Convert a recording to mono, 16 kHz, 16-bit PCM WAV, then transcribe and export 
 ffmpeg -i my_recording.mp3 -ac 1 -ar 16000 -c:a pcm_s16le my_recording.wav
 python3 scripts/transcribe.py my_recording.wav --output runs/reproduced/my_recording.json
 python3 scripts/export_srt.py runs/reproduced/my_recording.json my_recording.wav --output runs/reproduced/my_recording.srt
+```
+
+### Optional: synthesize a new conversation
+
+The included `assets/demo_conversation.wav` is the exact WAV behind the saved model response. To create a similar two-voice recording from the original script, install [Kokoro ONNX](https://github.com/thewh1teagle/kokoro-onnx) and download its public model and voices files. A new synthesis may differ from the included WAV, so send the new WAV through `transcribe.py` before exporting captions.
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+export PATH="$HOME/.local/bin:$PATH"
+uv venv --python 3.12 .venv-demo
+uv pip install --python .venv-demo/bin/python kokoro-onnx numpy soundfile
+mkdir -p models runs/reproduced
+curl -fL https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.1/kokoro-v1.0.int8.onnx -o models/kokoro-v1.0.int8.onnx
+curl -fL https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.1/voices-v1.0.bin -o models/voices-v1.0.bin
+.venv-demo/bin/python scripts/make_demo_audio.py --model models/kokoro-v1.0.int8.onnx --voices models/voices-v1.0.bin --output runs/reproduced/new_conversation.wav
 ```
 
 ### Troubleshooting and shutdown

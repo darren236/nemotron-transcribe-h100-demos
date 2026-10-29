@@ -3,16 +3,10 @@
 
 from __future__ import annotations
 
+import argparse
 import json
 from pathlib import Path
 
-import numpy as np
-import soundfile as sf
-from kokoro_onnx import Kokoro
-
-
-ROOT = Path(__file__).resolve().parents[1]
-IAN = Path("/home/darren/Projects/Ian_work/paper_animation/audio/kokoro")
 SCRIPT = [
     ("af_sarah", "I have a recording from our product review. Can we turn it into searchable captions?"),
     ("am_michael", "Yes. First, we send the audio to Nemotron Transcribe on one H one hundred GPU."),
@@ -24,7 +18,20 @@ SCRIPT = [
 
 
 def main() -> None:
-    tts = Kokoro(str(IAN / "kokoro-v1.0-int8-old.onnx"), str(IAN / "voices-v1.0-old.bin"))
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--model", required=True, type=Path, help="Downloaded Kokoro ONNX model")
+    parser.add_argument("--voices", required=True, type=Path, help="Matching Kokoro voices file")
+    parser.add_argument("--output", required=True, type=Path, help="Destination mono 16 kHz WAV")
+    args = parser.parse_args()
+    for path in (args.model, args.voices):
+        if not path.is_file():
+            parser.error(f"File not found: {path}")
+
+    import numpy as np
+    import soundfile as sf
+    from kokoro_onnx import Kokoro
+
+    tts = Kokoro(str(args.model), str(args.voices))
     parts = []
     line_times = []
     rate = 16000
@@ -48,10 +55,10 @@ def main() -> None:
         silence = np.zeros(round(0.38 * rate), dtype=np.float32)
         parts.append(silence)
         cursor += len(silence)
-    output = ROOT / "assets/demo_conversation.wav"
+    output = args.output
     output.parent.mkdir(parents=True, exist_ok=True)
     sf.write(output, np.concatenate(parts), rate, subtype="PCM_16")
-    (ROOT / "assets/demo_conversation_script.json").write_text(json.dumps({
+    output.with_name(f"{output.stem}_script.json").write_text(json.dumps({
         "provenance": "Original script; locally synthesized with Kokoro voices af_sarah and am_michael.",
         "note": "The reference text and line boundaries are for auditing, not model output.",
         "lines": line_times,
