@@ -1,0 +1,20 @@
+{
+  "project": "Nemotron 3.5 Transcribe recorded-audio demo",
+  "model": "nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B",
+  "model_revision": "9d8cd6b79bfdd427b6558a5fdbf76fcaf8c75341",
+  "nemo_speech_commit": "88846dcfa90233dce178cc3d5d9dd6065cdc8380",
+  "vllm_version": "0.32.0",
+  "runtime": "single NVIDIA H100 80 GB on Brev nvaitc_workshop, local-loopback vLLM",
+  "recording": "original two-speaker synthetic audio from local Kokoro af_sarah and am_michael",
+  "audio_sha256": "2e3cc6ad2193fa3fe25b2fe2867af4a4ba2190a244c5387afd71c0810665edac",
+  "audio_duration_seconds": 34.2373125,
+  "request_seconds": 2.666,
+  "aligned_word_count": 90,
+  "speaker_tags": [
+    "0",
+    "1"
+  ],
+  "alignment_error": null,
+  "verification": "SHA-256 match and schema/timestamp checks passed; human listening review recorded separately.",
+  "source_model_card": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B"
+}

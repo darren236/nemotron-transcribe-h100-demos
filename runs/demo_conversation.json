@@ -1,0 +1,1778 @@
+{
+  "schema_version": 1,
+  "status": "model_output",
+  "title": "demo conversation",
+  "model": "nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B",
+  "audio_file": "demo_conversation.wav",
+  "audio_sha256": "2e3cc6ad2193fa3fe25b2fe2867af4a4ba2190a244c5387afd71c0810665edac",
+  "audio_duration_seconds": 34.2373125,
+  "prompt": "Transcribe this audio with punctuation and capitalization. Include all spoken words and verbal fillers. Write numbers in their standard written form. Put speaker tags <spk:0> <spk:1> <spk:2> <spk:3> on the transcription.",
+  "text": "<spk:0> I have a recording from our product review. Can we turn it into searchable captions? <spk:1> Yes. First, we send the audio to Nemotron Transcribe on one H one hundred GPU. <spk:0> Will it tell us who is speaking and when each word starts? <spk:1> That's the idea. We ask for speaker tags and word timestamps, then check the result against the recording. <spk:0> Great. I can search for product review, jump to that moment, and export subtitle captions. <spk:1> Exactly. The transcript is useful, but a human should still review names and speaker changes.",
+  "words": [
+    {
+      "word": "I",
+      "start": 0.02,
+      "end": 0.24,
+      "speaker": "0"
+    },
+    {
+      "word": "have",
+      "start": 0.24,
+      "end": 0.32,
+      "speaker": "0"
+    },
+    {
+      "word": "a",
+      "start": 0.32,
+      "end": 0.48,
+      "speaker": "0"
+    },
+    {
+      "word": "recording",
+      "start": 0.48,
+      "end": 0.96,
+      "speaker": "0"
+    },
+    {
+      "word": "from",
+      "start": 0.96,
+      "end": 1.12,
+      "speaker": "0"
+    },
+    {
+      "word": "our",
+      "start": 1.12,
+      "end": 1.36,
+      "speaker": "0"
+    },
+    {
+      "word": "product",
+      "start": 1.36,
+      "end": 1.68,
+      "speaker": "0"
+    },
+    {
+      "word": "review.",
+      "start": 1.68,
+      "end": 2.09,
+      "speaker": "0"
+    },
+    {
+      "word": "Can",
+      "start": 2.53,
+      "end": 2.72,
+      "speaker": "0"
+    },
+    {
+      "word": "we",
+      "start": 2.72,
+      "end": 2.8,
+      "speaker": "0"
+    },
+    {
+      "word": "turn",
+      "start": 2.8,
+      "end": 3.04,
+      "speaker": "0"
+    },
+    {
+      "word": "it",
+      "start": 3.04,
+      "end": 3.2,
+      "speaker": "0"
+    },
+    {
+      "word": "into",
+      "start": 3.2,
+      "end": 3.44,
+      "speaker": "0"
+    },
+    {
+      "word": "searchable",
+      "start": 3.44,
+      "end": 3.92,
+      "speaker": "0"
+    },
+    {
+      "word": "captions?",
+      "start": 3.92,
+      "end": 4.48,
+      "speaker": "0"
+    },
+    {
+      "word": "Yes.",
+      "start": 4.87,
+      "end": 5.68,
+      "speaker": "1"
+    },
+    {
+      "word": "First,",
+      "start": 5.68,
+      "end": 6.479,
+      "speaker": "1"
+    },
+    {
+      "word": "we",
+      "start": 6.479,
+      "end": 6.639,
+      "speaker": "1"
+    },
+    {
+      "word": "send",
+      "start": 6.639,
+      "end": 6.839,
+      "speaker": "1"
+    },
+    {
+      "word": "the",
+      "start": 6.839,
+      "end": 7.039,
+      "speaker": "1"
+    },
+    {
+      "word": "audio",
+      "start": 7.039,
+      "end": 7.439,
+      "speaker": "1"
+    },
+    {
+      "word": "to",
+      "start": 7.439,
+      "end": 7.599,
+      "speaker": "1"
+    },
+    {
+      "word": "Nemotron",
+      "start": 7.599,
+      "end": 8.239,
+      "speaker": "1"
+    },
+    {
+      "word": "Transcribe",
+      "start": 8.239,
+      "end": 8.959,
+      "speaker": "1"
+    },
+    {
+      "word": "on",
+      "start": 8.959,
+      "end": 9.199,
+      "speaker": "1"
+    },
+    {
+      "word": "one",
+      "start": 9.199,
+      "end": 9.439,
+      "speaker": "1"
+    },
+    {
+      "word": "H",
+      "start": 9.439,
+      "end": 9.839,
+      "speaker": "1"
+    },
+    {
+      "word": "one",
+      "start": 9.839,
+      "end": 10.079,
+      "speaker": "1"
+    },
+    {
+      "word": "hundred",
+      "start": 10.079,
+      "end": 10.479,
+      "speaker": "1"
+    },
+    {
+      "word": "GPU.",
+      "start": 10.479,
+      "end": 11.23,
+      "speaker": "1"
+    },
+    {
+      "word": "Will",
+      "start": 11.64,
+      "end": 11.839,
+      "speaker": "0"
+    },
+    {
+      "word": "it",
+      "start": 11.839,
+      "end": 11.999,
+      "speaker": "0"
+    },
+    {
+      "word": "tell",
+      "start": 11.999,
+      "end": 12.079,
+      "speaker": "0"
+    },
+    {
+      "word": "us",
+      "start": 12.079,
+      "end": 12.319,
+      "speaker": "0"
+    },
+    {
+      "word": "who",
+      "start": 12.319,
+      "end": 12.399,
+      "speaker": "0"
+    },
+    {
+      "word": "is",
+      "start": 12.399,
+      "end": 12.559,
+      "speaker": "0"
+    },
+    {
+      "word": "speaking",
+      "start": 12.559,
+      "end": 13.119,
+      "speaker": "0"
+    },
+    {
+      "word": "and",
+      "start": 13.119,
+      "end": 13.199,
+      "speaker": "0"
+    },
+    {
+      "word": "when",
+      "start": 13.199,
+      "end": 13.439,
+      "speaker": "0"
+    },
+    {
+      "word": "each",
+      "start": 13.439,
+      "end": 13.679,
+      "speaker": "0"
+    },
+    {
+      "word": "word",
+      "start": 13.679,
+      "end": 13.999,
+      "speaker": "0"
+    },
+    {
+      "word": "starts?",
+      "start": 13.999,
+      "end": 14.48,
+      "speaker": "0"
+    },
+    {
+      "word": "That's",
+      "start": 14.87,
+      "end": 15.199,
+      "speaker": "1"
+    },
+    {
+      "word": "the",
+      "start": 15.199,
+      "end": 15.439,
+      "speaker": "1"
+    },
+    {
+      "word": "idea.",
+      "start": 15.439,
+      "end": 16.319,
+      "speaker": "1"
+    },
+    {
+      "word": "We",
+      "start": 16.319,
+      "end": 16.559,
+      "speaker": "1"
+    },
+    {
+      "word": "ask",
+      "start": 16.559,
+      "end": 16.879,
+      "speaker": "1"
+    },
+    {
+      "word": "for",
+      "start": 16.879,
+      "end": 17.119,
+      "speaker": "1"
+    },
+    {
+      "word": "speaker",
+      "start": 17.119,
+      "end": 17.519,
+      "speaker": "1"
+    },
+    {
+      "word": "tags",
+      "start": 17.519,
+      "end": 17.919,
+      "speaker": "1"
+    },
+    {
+      "word": "and",
+      "start": 17.919,
+      "end": 18.159,
+      "speaker": "1"
+    },
+    {
+      "word": "word",
+      "start": 18.159,
+      "end": 18.559,
+      "speaker": "1"
+    },
+    {
+      "word": "timestamps,",
+      "start": 18.559,
+      "end": 19.518,
+      "speaker": "1"
+    },
+    {
+      "word": "then",
+      "start": 19.598,
+      "end": 19.838,
+      "speaker": "1"
+    },
+    {
+      "word": "check",
+      "start": 19.838,
+      "end": 20.078,
+      "speaker": "1"
+    },
+    {
+      "word": "the",
+      "start": 20.078,
+      "end": 20.238,
+      "speaker": "1"
+    },
+    {
+      "word": "result",
+      "start": 20.238,
+      "end": 20.718,
+      "speaker": "1"
+    },
+    {
+      "word": "against",
+      "start": 20.718,
+      "end": 20.958,
+      "speaker": "1"
+    },
+    {
+      "word": "the",
+      "start": 20.958,
+      "end": 21.118,
+      "speaker": "1"
+    },
+    {
+      "word": "recording.",
+      "start": 21.118,
+      "end": 21.74,
+      "speaker": "1"
+    },
+    {
+      "word": "Great.",
+      "start": 22.2,
+      "end": 22.878,
+      "speaker": "0"
+    },
+    {
+      "word": "I",
+      "start": 22.878,
+      "end": 23.038,
+      "speaker": "0"
+    },
+    {
+      "word": "can",
+      "start": 23.038,
+      "end": 23.198,
+      "speaker": "0"
+    },
+    {
+      "word": "search",
+      "start": 23.198,
+      "end": 23.518,
+      "speaker": "0"
+    },
+    {
+      "word": "for",
+      "start": 23.518,
+      "end": 23.758,
+      "speaker": "0"
+    },
+    {
+      "word": "product",
+      "start": 23.758,
+      "end": 24.078,
+      "speaker": "0"
+    },
+    {
+      "word": "review,",
+      "start": 24.078,
+      "end": 24.718,
+      "speaker": "0"
+    },
+    {
+      "word": "jump",
+      "start": 24.718,
+      "end": 24.958,
+      "speaker": "0"
+    },
+    {
+      "word": "to",
+      "start": 24.958,
+      "end": 25.118,
+      "speaker": "0"
+    },
+    {
+      "word": "that",
+      "start": 25.118,
+      "end": 25.278,
+      "speaker": "0"
+    },
+    {
+      "word": "moment,",
+      "start": 25.278,
+      "end": 25.838,
+      "speaker": "0"
+    },
+    {
+      "word": "and",
+      "start": 25.838,
+      "end": 26.078,
+      "speaker": "0"
+    },
+    {
+      "word": "export",
+      "start": 26.078,
+      "end": 26.478,
+      "speaker": "0"
+    },
+    {
+      "word": "subtitle",
+      "start": 26.478,
+      "end": 27.038,
+      "speaker": "0"
+    },
+    {
+      "word": "captions.",
+      "start": 27.038,
+      "end": 27.59,
+      "speaker": "0"
+    },
+    {
+      "word": "Exactly.",
+      "start": 28.05,
+      "end": 28.78,
+      "speaker": "1"
+    },
+    {
+      "word": "The",
+      "start": 29.14,
+      "end": 29.358,
+      "speaker": "1"
+    },
+    {
+      "word": "transcript",
+      "start": 29.358,
+      "end": 29.998,
+      "speaker": "1"
+    },
+    {
+      "word": "is",
+      "start": 29.998,
+      "end": 30.158,
+      "speaker": "1"
+    },
+    {
+      "word": "useful,",
+      "start": 30.158,
+      "end": 30.638,
+      "speaker": "1"
+    },
+    {
+      "word": "but",
+      "start": 30.638,
+      "end": 30.798,
+      "speaker": "1"
+    },
+    {
+      "word": "a",
+      "start": 30.798,
+      "end": 30.958,
+      "speaker": "1"
+    },
+    {
+      "word": "human",
+      "start": 30.958,
+      "end": 31.278,
+      "speaker": "1"
+    },
+    {
+      "word": "should",
+      "start": 31.278,
+      "end": 31.518,
+      "speaker": "1"
+    },
+    {
+      "word": "still",
+      "start": 31.518,
+      "end": 31.838,
+      "speaker": "1"
+    },
+    {
+      "word": "review",
+      "start": 31.838,
+      "end": 32.237,
+      "speaker": "1"
+    },
+    {
+      "word": "names",
+      "start": 32.237,
+      "end": 32.637,
+      "speaker": "1"
+    },
+    {
+      "word": "and",
+      "start": 32.637,
+      "end": 32.797,
+      "speaker": "1"
+    },
+    {
+      "word": "speaker",
+      "start": 32.797,
+      "end": 33.277,
+      "speaker": "1"
+    },
+    {
+      "word": "changes.",
+      "start": 33.277,
+      "end": 33.81,
+      "speaker": "1"
+    }
+  ],
+  "alignment": {
+    "words": [
+      {
+        "word": "I",
+        "start": 0.02,
+        "end": 0.24,
+        "speaker": "0"
+      },
+      {
+        "word": "have",
+        "start": 0.24,
+        "end": 0.32,
+        "speaker": "0"
+      },
+      {
+        "word": "a",
+        "start": 0.32,
+        "end": 0.48,
+        "speaker": "0"
+      },
+      {
+        "word": "recording",
+        "start": 0.48,
+        "end": 0.96,
+        "speaker": "0"
+      },
+      {
+        "word": "from",
+        "start": 0.96,
+        "end": 1.12,
+        "speaker": "0"
+      },
+      {
+        "word": "our",
+        "start": 1.12,
+        "end": 1.36,
+        "speaker": "0"
+      },
+      {
+        "word": "product",
+        "start": 1.36,
+        "end": 1.68,
+        "speaker": "0"
+      },
+      {
+        "word": "review.",
+        "start": 1.68,
+        "end": 2.09,
+        "speaker": "0"
+      },
+      {
+        "word": "Can",
+        "start": 2.53,
+        "end": 2.72,
+        "speaker": "0"
+      },
+      {
+        "word": "we",
+        "start": 2.72,
+        "end": 2.8,
+        "speaker": "0"
+      },
+      {
+        "word": "turn",
+        "start": 2.8,
+        "end": 3.04,
+        "speaker": "0"
+      },
+      {
+        "word": "it",
+        "start": 3.04,
+        "end": 3.2,
+        "speaker": "0"
+      },
+      {
+        "word": "into",
+        "start": 3.2,
+        "end": 3.44,
+        "speaker": "0"
+      },
+      {
+        "word": "searchable",
+        "start": 3.44,
+        "end": 3.92,
+        "speaker": "0"
+      },
+      {
+        "word": "captions?",
+        "start": 3.92,
+        "end": 4.48,
+        "speaker": "0"
+      },
+      {
+        "word": "Yes.",
+        "start": 4.87,
+        "end": 5.68,
+        "speaker": "1"
+      },
+      {
+        "word": "First,",
+        "start": 5.68,
+        "end": 6.479,
+        "speaker": "1"
+      },
+      {
+        "word": "we",
+        "start": 6.479,
+        "end": 6.639,
+        "speaker": "1"
+      },
+      {
+        "word": "send",
+        "start": 6.639,
+        "end": 6.839,
+        "speaker": "1"
+      },
+      {
+        "word": "the",
+        "start": 6.839,
+        "end": 7.039,
+        "speaker": "1"
+      },
+      {
+        "word": "audio",
+        "start": 7.039,
+        "end": 7.439,
+        "speaker": "1"
+      },
+      {
+        "word": "to",
+        "start": 7.439,
+        "end": 7.599,
+        "speaker": "1"
+      },
+      {
+        "word": "Nemotron",
+        "start": 7.599,
+        "end": 8.239,
+        "speaker": "1"
+      },
+      {
+        "word": "Transcribe",
+        "start": 8.239,
+        "end": 8.959,
+        "speaker": "1"
+      },
+      {
+        "word": "on",
+        "start": 8.959,
+        "end": 9.199,
+        "speaker": "1"
+      },
+      {
+        "word": "one",
+        "start": 9.199,
+        "end": 9.439,
+        "speaker": "1"
+      },
+      {
+        "word": "H",
+        "start": 9.439,
+        "end": 9.839,
+        "speaker": "1"
+      },
+      {
+        "word": "one",
+        "start": 9.839,
+        "end": 10.079,
+        "speaker": "1"
+      },
+      {
+        "word": "hundred",
+        "start": 10.079,
+        "end": 10.479,
+        "speaker": "1"
+      },
+      {
+        "word": "GPU.",
+        "start": 10.479,
+        "end": 11.23,
+        "speaker": "1"
+      },
+      {
+        "word": "Will",
+        "start": 11.64,
+        "end": 11.839,
+        "speaker": "0"
+      },
+      {
+        "word": "it",
+        "start": 11.839,
+        "end": 11.999,
+        "speaker": "0"
+      },
+      {
+        "word": "tell",
+        "start": 11.999,
+        "end": 12.079,
+        "speaker": "0"
+      },
+      {
+        "word": "us",
+        "start": 12.079,
+        "end": 12.319,
+        "speaker": "0"
+      },
+      {
+        "word": "who",
+        "start": 12.319,
+        "end": 12.399,
+        "speaker": "0"
+      },
+      {
+        "word": "is",
+        "start": 12.399,
+        "end": 12.559,
+        "speaker": "0"
+      },
+      {
+        "word": "speaking",
+        "start": 12.559,
+        "end": 13.119,
+        "speaker": "0"
+      },
+      {
+        "word": "and",
+        "start": 13.119,
+        "end": 13.199,
+        "speaker": "0"
+      },
+      {
+        "word": "when",
+        "start": 13.199,
+        "end": 13.439,
+        "speaker": "0"
+      },
+      {
+        "word": "each",
+        "start": 13.439,
+        "end": 13.679,
+        "speaker": "0"
+      },
+      {
+        "word": "word",
+        "start": 13.679,
+        "end": 13.999,
+        "speaker": "0"
+      },
+      {
+        "word": "starts?",
+        "start": 13.999,
+        "end": 14.48,
+        "speaker": "0"
+      },
+      {
+        "word": "That's",
+        "start": 14.87,
+        "end": 15.199,
+        "speaker": "1"
+      },
+      {
+        "word": "the",
+        "start": 15.199,
+        "end": 15.439,
+        "speaker": "1"
+      },
+      {
+        "word": "idea.",
+        "start": 15.439,
+        "end": 16.319,
+        "speaker": "1"
+      },
+      {
+        "word": "We",
+        "start": 16.319,
+        "end": 16.559,
+        "speaker": "1"
+      },
+      {
+        "word": "ask",
+        "start": 16.559,
+        "end": 16.879,
+        "speaker": "1"
+      },
+      {
+        "word": "for",
+        "start": 16.879,
+        "end": 17.119,
+        "speaker": "1"
+      },
+      {
+        "word": "speaker",
+        "start": 17.119,
+        "end": 17.519,
+        "speaker": "1"
+      },
+      {
+        "word": "tags",
+        "start": 17.519,
+        "end": 17.919,
+        "speaker": "1"
+      },
+      {
+        "word": "and",
+        "start": 17.919,
+        "end": 18.159,
+        "speaker": "1"
+      },
+      {
+        "word": "word",
+        "start": 18.159,
+        "end": 18.559,
+        "speaker": "1"
+      },
+      {
+        "word": "timestamps,",
+        "start": 18.559,
+        "end": 19.518,
+        "speaker": "1"
+      },
+      {
+        "word": "then",
+        "start": 19.598,
+        "end": 19.838,
+        "speaker": "1"
+      },
+      {
+        "word": "check",
+        "start": 19.838,
+        "end": 20.078,
+        "speaker": "1"
+      },
+      {
+        "word": "the",
+        "start": 20.078,
+        "end": 20.238,
+        "speaker": "1"
+      },
+      {
+        "word": "result",
+        "start": 20.238,
+        "end": 20.718,
+        "speaker": "1"
+      },
+      {
+        "word": "against",
+        "start": 20.718,
+        "end": 20.958,
+        "speaker": "1"
+      },
+      {
+        "word": "the",
+        "start": 20.958,
+        "end": 21.118,
+        "speaker": "1"
+      },
+      {
+        "word": "recording.",
+        "start": 21.118,
+        "end": 21.74,
+        "speaker": "1"
+      },
+      {
+        "word": "Great.",
+        "start": 22.2,
+        "end": 22.878,
+        "speaker": "0"
+      },
+      {
+        "word": "I",
+        "start": 22.878,
+        "end": 23.038,
+        "speaker": "0"
+      },
+      {
+        "word": "can",
+        "start": 23.038,
+        "end": 23.198,
+        "speaker": "0"
+      },
+      {
+        "word": "search",
+        "start": 23.198,
+        "end": 23.518,
+        "speaker": "0"
+      },
+      {
+        "word": "for",
+        "start": 23.518,
+        "end": 23.758,
+        "speaker": "0"
+      },
+      {
+        "word": "product",
+        "start": 23.758,
+        "end": 24.078,
+        "speaker": "0"
+      },
+      {
+        "word": "review,",
+        "start": 24.078,
+        "end": 24.718,
+        "speaker": "0"
+      },
+      {
+        "word": "jump",
+        "start": 24.718,
+        "end": 24.958,
+        "speaker": "0"
+      },
+      {
+        "word": "to",
+        "start": 24.958,
+        "end": 25.118,
+        "speaker": "0"
+      },
+      {
+        "word": "that",
+        "start": 25.118,
+        "end": 25.278,
+        "speaker": "0"
+      },
+      {
+        "word": "moment,",
+        "start": 25.278,
+        "end": 25.838,
+        "speaker": "0"
+      },
+      {
+        "word": "and",
+        "start": 25.838,
+        "end": 26.078,
+        "speaker": "0"
+      },
+      {
+        "word": "export",
+        "start": 26.078,
+        "end": 26.478,
+        "speaker": "0"
+      },
+      {
+        "word": "subtitle",
+        "start": 26.478,
+        "end": 27.038,
+        "speaker": "0"
+      },
+      {
+        "word": "captions.",
+        "start": 27.038,
+        "end": 27.59,
+        "speaker": "0"
+      },
+      {
+        "word": "Exactly.",
+        "start": 28.05,
+        "end": 28.78,
+        "speaker": "1"
+      },
+      {
+        "word": "The",
+        "start": 29.14,
+        "end": 29.358,
+        "speaker": "1"
+      },
+      {
+        "word": "transcript",
+        "start": 29.358,
+        "end": 29.998,
+        "speaker": "1"
+      },
+      {
+        "word": "is",
+        "start": 29.998,
+        "end": 30.158,
+        "speaker": "1"
+      },
+      {
+        "word": "useful,",
+        "start": 30.158,
+        "end": 30.638,
+        "speaker": "1"
+      },
+      {
+        "word": "but",
+        "start": 30.638,
+        "end": 30.798,
+        "speaker": "1"
+      },
+      {
+        "word": "a",
+        "start": 30.798,
+        "end": 30.958,
+        "speaker": "1"
+      },
+      {
+        "word": "human",
+        "start": 30.958,
+        "end": 31.278,
+        "speaker": "1"
+      },
+      {
+        "word": "should",
+        "start": 31.278,
+        "end": 31.518,
+        "speaker": "1"
+      },
+      {
+        "word": "still",
+        "start": 31.518,
+        "end": 31.838,
+        "speaker": "1"
+      },
+      {
+        "word": "review",
+        "start": 31.838,
+        "end": 32.237,
+        "speaker": "1"
+      },
+      {
+        "word": "names",
+        "start": 32.237,
+        "end": 32.637,
+        "speaker": "1"
+      },
+      {
+        "word": "and",
+        "start": 32.637,
+        "end": 32.797,
+        "speaker": "1"
+      },
+      {
+        "word": "speaker",
+        "start": 32.797,
+        "end": 33.277,
+        "speaker": "1"
+      },
+      {
+        "word": "changes.",
+        "start": 33.277,
+        "end": 33.81,
+        "speaker": "1"
+      }
+    ],
+    "diarization": [
+      {
+        "speaker": 0,
+        "start": 0.02,
+        "end": 2.09
+      },
+      {
+        "speaker": 0,
+        "start": 2.53,
+        "end": 4.48
+      },
+      {
+        "speaker": 1,
+        "start": 4.87,
+        "end": 11.23
+      },
+      {
+        "speaker": 0,
+        "start": 11.64,
+        "end": 14.48
+      },
+      {
+        "speaker": 1,
+        "start": 14.87,
+        "end": 21.74
+      },
+      {
+        "speaker": 0,
+        "start": 22.2,
+        "end": 27.59
+      },
+      {
+        "speaker": 1,
+        "start": 28.05,
+        "end": 28.78
+      },
+      {
+        "speaker": 1,
+        "start": 29.14,
+        "end": 33.81
+      }
+    ],
+    "speaker_tag_to_diarization_speaker": {
+      "0": 0,
+      "1": 1
+    },
+    "error": null
+  },
+  "raw_response": {
+    "id": "chatcmpl-ctc-6d2da964dd6e489294d42cf1a71ad41d",
+    "object": "chat.completion",
+    "created": 1793257659,
+    "model": "nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "<spk:0> I have a recording from our product review. Can we turn it into searchable captions? <spk:1> Yes. First, we send the audio to Nemotron Transcribe on one H one hundred GPU. <spk:0> Will it tell us who is speaking and when each word starts? <spk:1> That's the idea. We ask for speaker tags and word timestamps, then check the result against the recording. <spk:0> Great. I can search for product review, jump to that moment, and export subtitle captions. <spk:1> Exactly. The transcript is useful, but a human should still review names and speaker changes.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.32.0-ccb6983e",
+    "usage": {
+      "prompt_tokens": 488,
+      "total_tokens": 613,
+      "completion_tokens": 125,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null,
+    "ctc_timestamps": {
+      "words": [
+        {
+          "word": "I",
+          "start": 0.02,
+          "end": 0.24,
+          "speaker": "0"
+        },
+        {
+          "word": "have",
+          "start": 0.24,
+          "end": 0.32,
+          "speaker": "0"
+        },
+        {
+          "word": "a",
+          "start": 0.32,
+          "end": 0.48,
+          "speaker": "0"
+        },
+        {
+          "word": "recording",
+          "start": 0.48,
+          "end": 0.96,
+          "speaker": "0"
+        },
+        {
+          "word": "from",
+          "start": 0.96,
+          "end": 1.12,
+          "speaker": "0"
+        },
+        {
+          "word": "our",
+          "start": 1.12,
+          "end": 1.36,
+          "speaker": "0"
+        },
+        {
+          "word": "product",
+          "start": 1.36,
+          "end": 1.68,
+          "speaker": "0"
+        },
+        {
+          "word": "review.",
+          "start": 1.68,
+          "end": 2.09,
+          "speaker": "0"
+        },
+        {
+          "word": "Can",
+          "start": 2.53,
+          "end": 2.72,
+          "speaker": "0"
+        },
+        {
+          "word": "we",
+          "start": 2.72,
+          "end": 2.8,
+          "speaker": "0"
+        },
+        {
+          "word": "turn",
+          "start": 2.8,
+          "end": 3.04,
+          "speaker": "0"
+        },
+        {
+          "word": "it",
+          "start": 3.04,
+          "end": 3.2,
+          "speaker": "0"
+        },
+        {
+          "word": "into",
+          "start": 3.2,
+          "end": 3.44,
+          "speaker": "0"
+        },
+        {
+          "word": "searchable",
+          "start": 3.44,
+          "end": 3.92,
+          "speaker": "0"
+        },
+        {
+          "word": "captions?",
+          "start": 3.92,
+          "end": 4.48,
+          "speaker": "0"
+        },
+        {
+          "word": "Yes.",
+          "start": 4.87,
+          "end": 5.68,
+          "speaker": "1"
+        },
+        {
+          "word": "First,",
+          "start": 5.68,
+          "end": 6.479,
+          "speaker": "1"
+        },
+        {
+          "word": "we",
+          "start": 6.479,
+          "end": 6.639,
+          "speaker": "1"
+        },
+        {
+          "word": "send",
+          "start": 6.639,
+          "end": 6.839,
+          "speaker": "1"
+        },
+        {
+          "word": "the",
+          "start": 6.839,
+          "end": 7.039,
+          "speaker": "1"
+        },
+        {
+          "word": "audio",
+          "start": 7.039,
+          "end": 7.439,
+          "speaker": "1"
+        },
+        {
+          "word": "to",
+          "start": 7.439,
+          "end": 7.599,
+          "speaker": "1"
+        },
+        {
+          "word": "Nemotron",
+          "start": 7.599,
+          "end": 8.239,
+          "speaker": "1"
+        },
+        {
+          "word": "Transcribe",
+          "start": 8.239,
+          "end": 8.959,
+          "speaker": "1"
+        },
+        {
+          "word": "on",
+          "start": 8.959,
+          "end": 9.199,
+          "speaker": "1"
+        },
+        {
+          "word": "one",
+          "start": 9.199,
+          "end": 9.439,
+          "speaker": "1"
+        },
+        {
+          "word": "H",
+          "start": 9.439,
+          "end": 9.839,
+          "speaker": "1"
+        },
+        {
+          "word": "one",
+          "start": 9.839,
+          "end": 10.079,
+          "speaker": "1"
+        },
+        {
+          "word": "hundred",
+          "start": 10.079,
+          "end": 10.479,
+          "speaker": "1"
+        },
+        {
+          "word": "GPU.",
+          "start": 10.479,
+          "end": 11.23,
+          "speaker": "1"
+        },
+        {
+          "word": "Will",
+          "start": 11.64,
+          "end": 11.839,
+          "speaker": "0"
+        },
+        {
+          "word": "it",
+          "start": 11.839,
+          "end": 11.999,
+          "speaker": "0"
+        },
+        {
+          "word": "tell",
+          "start": 11.999,
+          "end": 12.079,
+          "speaker": "0"
+        },
+        {
+          "word": "us",
+          "start": 12.079,
+          "end": 12.319,
+          "speaker": "0"
+        },
+        {
+          "word": "who",
+          "start": 12.319,
+          "end": 12.399,
+          "speaker": "0"
+        },
+        {
+          "word": "is",
+          "start": 12.399,
+          "end": 12.559,
+          "speaker": "0"
+        },
+        {
+          "word": "speaking",
+          "start": 12.559,
+          "end": 13.119,
+          "speaker": "0"
+        },
+        {
+          "word": "and",
+          "start": 13.119,
+          "end": 13.199,
+          "speaker": "0"
+        },
+        {
+          "word": "when",
+          "start": 13.199,
+          "end": 13.439,
+          "speaker": "0"
+        },
+        {
+          "word": "each",
+          "start": 13.439,
+          "end": 13.679,
+          "speaker": "0"
+        },
+        {
+          "word": "word",
+          "start": 13.679,
+          "end": 13.999,
+          "speaker": "0"
+        },
+        {
+          "word": "starts?",
+          "start": 13.999,
+          "end": 14.48,
+          "speaker": "0"
+        },
+        {
+          "word": "That's",
+          "start": 14.87,
+          "end": 15.199,
+          "speaker": "1"
+        },
+        {
+          "word": "the",
+          "start": 15.199,
+          "end": 15.439,
+          "speaker": "1"
+        },
+        {
+          "word": "idea.",
+          "start": 15.439,
+          "end": 16.319,
+          "speaker": "1"
+        },
+        {
+          "word": "We",
+          "start": 16.319,
+          "end": 16.559,
+          "speaker": "1"
+        },
+        {
+          "word": "ask",
+          "start": 16.559,
+          "end": 16.879,
+          "speaker": "1"
+        },
+        {
+          "word": "for",
+          "start": 16.879,
+          "end": 17.119,
+          "speaker": "1"
+        },
+        {
+          "word": "speaker",
+          "start": 17.119,
+          "end": 17.519,
+          "speaker": "1"
+        },
+        {
+          "word": "tags",
+          "start": 17.519,
+          "end": 17.919,
+          "speaker": "1"
+        },
+        {
+          "word": "and",
+          "start": 17.919,
+          "end": 18.159,
+          "speaker": "1"
+        },
+        {
+          "word": "word",
+          "start": 18.159,
+          "end": 18.559,
+          "speaker": "1"
+        },
+        {
+          "word": "timestamps,",
+          "start": 18.559,
+          "end": 19.518,
+          "speaker": "1"
+        },
+        {
+          "word": "then",
+          "start": 19.598,
+          "end": 19.838,
+          "speaker": "1"
+        },
+        {
+          "word": "check",
+          "start": 19.838,
+          "end": 20.078,
+          "speaker": "1"
+        },
+        {
+          "word": "the",
+          "start": 20.078,
+          "end": 20.238,
+          "speaker": "1"
+        },
+        {
+          "word": "result",
+          "start": 20.238,
+          "end": 20.718,
+          "speaker": "1"
+        },
+        {
+          "word": "against",
+          "start": 20.718,
+          "end": 20.958,
+          "speaker": "1"
+        },
+        {
+          "word": "the",
+          "start": 20.958,
+          "end": 21.118,
+          "speaker": "1"
+        },
+        {
+          "word": "recording.",
+          "start": 21.118,
+          "end": 21.74,
+          "speaker": "1"
+        },
+        {
+          "word": "Great.",
+          "start": 22.2,
+          "end": 22.878,
+          "speaker": "0"
+        },
+        {
+          "word": "I",
+          "start": 22.878,
+          "end": 23.038,
+          "speaker": "0"
+        },
+        {
+          "word": "can",
+          "start": 23.038,
+          "end": 23.198,
+          "speaker": "0"
+        },
+        {
+          "word": "search",
+          "start": 23.198,
+          "end": 23.518,
+          "speaker": "0"
+        },
+        {
+          "word": "for",
+          "start": 23.518,
+          "end": 23.758,
+          "speaker": "0"
+        },
+        {
+          "word": "product",
+          "start": 23.758,
+          "end": 24.078,
+          "speaker": "0"
+        },
+        {
+          "word": "review,",
+          "start": 24.078,
+          "end": 24.718,
+          "speaker": "0"
+        },
+        {
+          "word": "jump",
+          "start": 24.718,
+          "end": 24.958,
+          "speaker": "0"
+        },
+        {
+          "word": "to",
+          "start": 24.958,
+          "end": 25.118,
+          "speaker": "0"
+        },
+        {
+          "word": "that",
+          "start": 25.118,
+          "end": 25.278,
+          "speaker": "0"
+        },
+        {
+          "word": "moment,",
+          "start": 25.278,
+          "end": 25.838,
+          "speaker": "0"
+        },
+        {
+          "word": "and",
+          "start": 25.838,
+          "end": 26.078,
+          "speaker": "0"
+        },
+        {
+          "word": "export",
+          "start": 26.078,
+          "end": 26.478,
+          "speaker": "0"
+        },
+        {
+          "word": "subtitle",
+          "start": 26.478,
+          "end": 27.038,
+          "speaker": "0"
+        },
+        {
+          "word": "captions.",
+          "start": 27.038,
+          "end": 27.59,
+          "speaker": "0"
+        },
+        {
+          "word": "Exactly.",
+          "start": 28.05,
+          "end": 28.78,
+          "speaker": "1"
+        },
+        {
+          "word": "The",
+          "start": 29.14,
+          "end": 29.358,
+          "speaker": "1"
+        },
+        {
+          "word": "transcript",
+          "start": 29.358,
+          "end": 29.998,
+          "speaker": "1"
+        },
+        {
+          "word": "is",
+          "start": 29.998,
+          "end": 30.158,
+          "speaker": "1"
+        },
+        {
+          "word": "useful,",
+          "start": 30.158,
+          "end": 30.638,
+          "speaker": "1"
+        },
+        {
+          "word": "but",
+          "start": 30.638,
+          "end": 30.798,
+          "speaker": "1"
+        },
+        {
+          "word": "a",
+          "start": 30.798,
+          "end": 30.958,
+          "speaker": "1"
+        },
+        {
+          "word": "human",
+          "start": 30.958,
+          "end": 31.278,
+          "speaker": "1"
+        },
+        {
+          "word": "should",
+          "start": 31.278,
+          "end": 31.518,
+          "speaker": "1"
+        },
+        {
+          "word": "still",
+          "start": 31.518,
+          "end": 31.838,
+          "speaker": "1"
+        },
+        {
+          "word": "review",
+          "start": 31.838,
+          "end": 32.237,
+          "speaker": "1"
+        },
+        {
+          "word": "names",
+          "start": 32.237,
+          "end": 32.637,
+          "speaker": "1"
+        },
+        {
+          "word": "and",
+          "start": 32.637,
+          "end": 32.797,
+          "speaker": "1"
+        },
+        {
+          "word": "speaker",
+          "start": 32.797,
+          "end": 33.277,
+          "speaker": "1"
+        },
+        {
+          "word": "changes.",
+          "start": 33.277,
+          "end": 33.81,
+          "speaker": "1"
+        }
+      ],
+      "diarization": [
+        {
+          "speaker": 0,
+          "start": 0.02,
+          "end": 2.09
+        },
+        {
+          "speaker": 0,
+          "start": 2.53,
+          "end": 4.48
+        },
+        {
+          "speaker": 1,
+          "start": 4.87,
+          "end": 11.23
+        },
+        {
+          "speaker": 0,
+          "start": 11.64,
+          "end": 14.48
+        },
+        {
+          "speaker": 1,
+          "start": 14.87,
+          "end": 21.74
+        },
+        {
+          "speaker": 0,
+          "start": 22.2,
+          "end": 27.59
+        },
+        {
+          "speaker": 1,
+          "start": 28.05,
+          "end": 28.78
+        },
+        {
+          "speaker": 1,
+          "start": 29.14,
+          "end": 33.81
+        }
+      ],
+      "speaker_tag_to_diarization_speaker": {
+        "0": 0,
+        "1": 1
+      },
+      "error": null
+    }
+  },
+  "request_seconds": 2.666
+}

@@ -1,0 +1,23 @@
+{
+  "name": "nemotron-transcribe-demo-video",
+  "version": "0.1.0",
+  "private": true,
+  "description": "60-second Remotion video for the NVIDIA Nemotron 3.5 Transcribe on H100 demo",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts NemotronTranscribeDemo out/nemotron-transcribe-demo.mp4",
+    "still": "remotion still src/index.ts NemotronTranscribeDemo out/frame.png --frame=600",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.539",
+    "@remotion/media-utils": "4.0.539",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.539"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.7",
+    "typescript": "5.9.3"
+  }
+}

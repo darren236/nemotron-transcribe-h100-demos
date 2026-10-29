@@ -1,0 +1,47 @@
+1
+00:00:00,020 --> 00:00:02,090
+Speaker 1: I have a recording from our product review.
+
+2
+00:00:02,530 --> 00:00:04,480
+Speaker 1: Can we turn it into searchable captions?
+
+3
+00:00:04,870 --> 00:00:05,680
+Speaker 2: Yes.
+
+4
+00:00:05,680 --> 00:00:11,230
+Speaker 2: First, we send the audio to Nemotron Transcribe on one H one hundred GPU.
+
+5
+00:00:11,640 --> 00:00:14,480
+Speaker 1: Will it tell us who is speaking and when each word starts?
+
+6
+00:00:14,870 --> 00:00:16,319
+Speaker 2: That's the idea.
+
+7
+00:00:16,319 --> 00:00:21,118
+Speaker 2: We ask for speaker tags and word timestamps, then check the result against the
+
+8
+00:00:21,118 --> 00:00:21,740
+Speaker 2: recording.
+
+9
+00:00:22,200 --> 00:00:22,878
+Speaker 1: Great.
+
+10
+00:00:22,878 --> 00:00:27,590
+Speaker 1: I can search for product review, jump to that moment, and export subtitle captions.
+
+11
+00:00:28,050 --> 00:00:28,780
+Speaker 2: Exactly.
+
+12
+00:00:29,140 --> 00:00:33,810
+Speaker 2: The transcript is useful, but a human should still review names and speaker changes.

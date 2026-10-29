@@ -1,0 +1,53 @@
+{
+  "scope": "Single locally synthesized recording; this is a reproducibility check, not a model benchmark.",
+  "reference_token_count": 90,
+  "model_token_count": 90,
+  "normalized_tokens_match_reference": true,
+  "reference_turn_count": 6,
+  "model_turn_count": 6,
+  "alternating_speakers_match_reference": true,
+  "turns": [
+    {
+      "model_speaker": "0",
+      "model_start": 0.02,
+      "model_end": 4.48,
+      "source_start": 0.0,
+      "source_end": 4.501
+    },
+    {
+      "model_speaker": "1",
+      "model_start": 4.87,
+      "model_end": 11.23,
+      "source_start": 4.881,
+      "source_end": 11.281
+    },
+    {
+      "model_speaker": "0",
+      "model_start": 11.64,
+      "model_end": 14.48,
+      "source_start": 11.661,
+      "source_end": 14.499
+    },
+    {
+      "model_speaker": "1",
+      "model_start": 14.87,
+      "model_end": 21.74,
+      "source_start": 14.879,
+      "source_end": 21.833
+    },
+    {
+      "model_speaker": "0",
+      "model_start": 22.2,
+      "model_end": 27.59,
+      "source_start": 22.213,
+      "source_end": 27.611
+    },
+    {
+      "model_speaker": "1",
+      "model_start": 28.05,
+      "model_end": 33.81,
+      "source_start": 27.991,
+      "source_end": 33.857
+    }
+  ]
+}

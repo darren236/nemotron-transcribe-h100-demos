@@ -1,0 +1,35 @@
+{
+  "provenance": "Original script, synthesized locally using Kokoro af_sarah; no external voice service.",
+  "clips": [
+    {
+      "scene": "identity",
+      "text": "On one H one hundred, Nemotron 3.5 Transcribe turns recorded speech into text, speaker tags, and word timings.",
+      "file": "video/public/narration/identity.wav",
+      "seconds": 7.573
+    },
+    {
+      "scene": "transcript",
+      "text": "Here is the actual model response. Each word carries a start and end time, and speaker turns stay visible. This original conversation was synthesized locally for a repeatable test. The film compresses the timeline, while the transcript preserves the recording's timing. Inspect every detail in the live viewer.",
+      "file": "video/public/narration/transcript.wav",
+      "seconds": 18.304
+    },
+    {
+      "scene": "search",
+      "text": "Search the transcript to find a phrase and jump to its place in the recording. Click a word to hear that moment.",
+      "file": "video/public/narration/search.wav",
+      "seconds": 5.931
+    },
+    {
+      "scene": "srt",
+      "text": "Those same word timestamps can be grouped into subtitle cues and exported as an SRT file. The result stays linked to the exact audio used for this run.",
+      "file": "video/public/narration/srt.wav",
+      "seconds": 9.685
+    },
+    {
+      "scene": "audit",
+      "text": "The output is real. Names and speaker turns still deserve a human listen. Raw response and model revision are saved.",
+      "file": "video/public/narration/audit.wav",
+      "seconds": 7.36
+    }
+  ]
+}

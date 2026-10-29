@@ -1,0 +1,42 @@
+{
+  "provenance": "Original script; locally synthesized with Kokoro voices af_sarah and am_michael.",
+  "note": "The reference text and line boundaries are for auditing, not model output.",
+  "lines": [
+    {
+      "voice": "af_sarah",
+      "text": "I have a recording from our product review. Can we turn it into searchable captions?",
+      "start": 0.0,
+      "end": 4.501
+    },
+    {
+      "voice": "am_michael",
+      "text": "Yes. First, we send the audio to Nemotron Transcribe on one H one hundred GPU.",
+      "start": 4.881,
+      "end": 11.281
+    },
+    {
+      "voice": "af_sarah",
+      "text": "Will it tell us who is speaking and when each word starts?",
+      "start": 11.661,
+      "end": 14.499
+    },
+    {
+      "voice": "am_michael",
+      "text": "That's the idea. We ask for speaker tags and word timestamps, then check the result against the recording.",
+      "start": 14.879,
+      "end": 21.833
+    },
+    {
+      "voice": "af_sarah",
+      "text": "Great. I can search for product review, jump to that moment, and export subtitle captions.",
+      "start": 22.213,
+      "end": 27.611
+    },
+    {
+      "voice": "am_michael",
+      "text": "Exactly. The transcript is useful, but a human should still review names and speaker changes.",
+      "start": 27.991,
+      "end": 33.857
+    }
+  ]
+}
