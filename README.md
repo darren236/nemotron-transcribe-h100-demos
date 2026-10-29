@@ -2,7 +2,7 @@
 
 A reproducible set of three real H100 demos of [NVIDIA Nemotron 3.5 Transcribe](https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B): an original two-speaker conversation, a JFK speech clip, and NASA Artemis mission radio. Each saved JSON contains the raw vLLM response, CTC word timings, model-assigned speaker tags, and the SHA-256 of its exact input WAV. The [gallery manifest](runs/gallery_manifest.json) records model revision, provenance and run measurements. These are examples, not accuracy or latency benchmarks.
 
-**[Open the interactive demo gallery](https://darren236.github.io/nemotron-transcribe-h100-demos/)** · [H100 setup guide](docs/H100_RUNBOOK.md) · [Inference commands and audio sources](demos/README.md)
+**[H100 setup guide](docs/H100_RUNBOOK.md)** · [Inference commands and audio sources](demos/README.md)
 
 ![Nemotron 3.5 Transcribe running on one H100, from the project video](docs/showcase.png)
 
