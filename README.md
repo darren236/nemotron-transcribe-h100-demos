@@ -28,7 +28,7 @@ The model transcribes a clip from the [NASA Artemis Audio Library](https://www.n
 
 ## Run it on an H100
 
-This guide follows [NVIDIA's Nemotron 3.5 Transcribe model card](https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B) and the versions used for the videos. It assumes an Ubuntu H100 80 GB machine with a CUDA driver, a checkout of **this repository on that machine**, and enough disk for the model and environment. The recorded run used a 256 GiB disk; the BF16 checkpoint was about 63 GiB. All commands below run on the H100, from this repository's root unless the command changes directories. The vLLM server stays on `127.0.0.1:8000`.
+This guide follows [NVIDIA's Nemotron 3.5 Transcribe model card](https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B) and the versions used for the videos. It serves downloaded BF16 weights with open-source NeMo Speech and vLLM; these demos do not deploy a NIM container. It assumes an Ubuntu H100 80 GB machine with a CUDA driver, a checkout of **this repository on that machine**, and enough disk for the model and environment. The recorded run used a 256 GiB disk; the BF16 checkpoint was about 63 GiB. All commands below run on the H100, from this repository's root unless the command changes directories. The vLLM server stays on `127.0.0.1:8000`.
 
 ### 1. Install the runtime and download the model
 
