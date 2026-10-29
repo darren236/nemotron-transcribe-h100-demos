@@ -23,15 +23,3 @@ export type DemoResult = {
   /** Set only by the development placeholder. Real results must omit it. */
   is_placeholder?: boolean;
 };
-
-export type DemoProps = {
-  result: DemoResult;
-  /** Hardware label. Defaults to "NVIDIA H100". */
-  hardware?: string;
-  /** Search term for the highlight scene. If omitted, the most frequent word (4+ letters) is used and labelled as auto-selected. */
-  search_query?: string;
-  /** Optional closing audit note. If omitted, a neutral provenance statement is shown. */
-  audit_note?: string;
-  /** Play the demo WAV under the opening scene (first 6 s). Default false. */
-  play_audio?: boolean;
-};

@@ -82,7 +82,7 @@ python3 ~/nemotron-demo/transcribe.py ~/nemotron-demo/demo_conversation.wav \
   --output ~/nemotron-demo/demo_conversation.json
 ```
 
-The request asks for punctuation, speaker tags, and word timestamps with `capture_ctc_timestamps=true`, temperature 0 and reasoning off. The script fails if CTC alignment reports an error or words are missing. Copy the JSON back to `runs/demo_conversation.json`, then run `scripts/finalize_run.py` to check the audio hash and produce the SRT, manifest, and Remotion props.
+The request asks for punctuation, speaker tags, and word timestamps with `capture_ctc_timestamps=true`, temperature 0 and reasoning off. The script fails if CTC alignment reports an error or words are missing. Copy the JSON back to `runs/demo_conversation.json`, then run `scripts/finalize_run.py` to check the audio hash and produce the SRT and manifest. `scripts/build_gallery.py` generates the props for all three caption clips.
 
 One local finalization sequence, from the repository root:
 
@@ -92,10 +92,13 @@ python3 scripts/finalize_run.py \
   --model-revision 9d8cd6b79bfdd427b6558a5fdbf76fcaf8c75341 \
   --speech-commit 88846dcfa90233dce178cc3d5d9dd6065cdc8380
 python3 scripts/audit_run.py
+python3 scripts/build_gallery.py
 cd video
 npm ci
 npm run typecheck
-npm run render -- --props=./result.props.json
+npm run render
+cd ..
+bash scripts/make_gifs.sh
 ```
 
 The first real request took 2.666 seconds for the 34.24-second input after the model had loaded and warmed up. It returned 90 aligned words, two speaker tags and `alignment.error=null`. These numbers describe this one synthetic recording and warm server request.
@@ -130,9 +133,8 @@ Keep the H100 running only through inference and local output verification. Rend
 
 3. **`/v1/models` refuses connections during startup:** Watch the vLLM log; model loading, torch compilation and warmup take time. A refused connection alone is not evidence of failure. Look for `ERROR`, `fatal error`, or `Application startup complete` before retrying.
 4. **Brev lists `RUNNING` but initial SSH waits:** The CLI retried and connected after about 10–20 seconds in this run. Check `brev ls --all`, then `brev refresh` if the SSH configuration remains stale, as recommended by the [Brev CLI docs](https://docs.nvidia.com/brev/cli/connectivity).
-5. **A Remotion still lost the model title late in scene 2:** The title container remained in the DOM with opacity 1, but Chromium omitted its text at frame 375. A near-transparent container background (`#FFFFFF01`) forced consistent compositing; stills at frames 330, 360 and 375 were checked before the final render. This affected only the video, not inference.
-6. **Brev `copy` rejected a starting instance while direct SSH worked:** On the second boot, `brev copy` returned `instance ... is not running (status: STARTING)` although SSH, `nvidia-smi` and the saved checkpoint were available. `scp -o BatchMode=yes files... nemotron-transcribe-v1:/home/ubuntu/nemotron-demo/` used the CLI-created SSH configuration successfully. Later `brev ls --all` showed `RUNNING`.
-7. **`brev start` spinner kept saying `instance is starting`:** Check `brev ls --all` and SSH separately. The CLI says it is safe to interrupt the spinner; we ended it after the instance had already been used and stopped.
+5. **Brev `copy` rejected a starting instance while direct SSH worked:** On the second boot, `brev copy` returned `instance ... is not running (status: STARTING)` although SSH, `nvidia-smi` and the saved checkpoint were available. `scp -o BatchMode=yes files... nemotron-transcribe-v1:/home/ubuntu/nemotron-demo/` used the CLI-created SSH configuration successfully. Later `brev ls --all` showed `RUNNING`.
+6. **`brev start` spinner kept saying `instance is starting`:** Check `brev ls --all` and SSH separately. The CLI says it is safe to interrupt the spinner; we ended it after the instance had already been used and stopped.
 
 ## Shutdown and cost control
 

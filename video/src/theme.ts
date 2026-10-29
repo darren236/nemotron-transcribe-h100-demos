@@ -1,16 +1,7 @@
 export const WIDTH = 1920;
 export const HEIGHT = 1080;
 export const FPS = 30;
-export const DURATION = 1800; // 60 s
-
-export const SCENES = {
-  signal: {from: 0, dur: 180},
-  identity: {from: 180, dur: 240},
-  transcript: {from: 420, dur: 600},
-  search: {from: 1020, dur: 240},
-  srt: {from: 1260, dur: 300},
-  audit: {from: 1560, dur: 240},
-} as const;
+export const DURATION = 1020; // Studio fallback; each real clip uses its audio duration.
 
 export const C = {
   ink0: '#0B0D0B',

@@ -217,7 +217,7 @@ async function selectDemo(entry) {
   if (token !== loadToken) return;
   data = candidate;
   currentDemo = entry;
-  $("demo-video").href = `./#${entry.id}`;
+  $("demo-video").href = `${entry.id}.html`;
   $("demo-result").href = entry.result;
   selectedAudio = file; selectedAudioHash = hash;
   if (audioUrl) URL.revokeObjectURL(audioUrl);

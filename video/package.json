@@ -2,11 +2,13 @@
   "name": "nemotron-transcribe-demo-video",
   "version": "0.1.0",
   "private": true,
-  "description": "60-second Remotion video for the NVIDIA Nemotron 3.5 Transcribe on H100 demo",
+  "description": "Three caption videos from real NVIDIA Nemotron 3.5 Transcribe H100 outputs",
   "scripts": {
     "studio": "remotion studio src/index.ts",
-    "render": "remotion render src/index.ts NemotronTranscribeDemo out/nemotron-transcribe-demo.mp4",
-    "still": "remotion still src/index.ts NemotronTranscribeDemo out/frame.png --frame=600",
+    "render": "npm run render:conversation && npm run render:jfk && npm run render:artemis",
+    "render:conversation": "remotion render src/index.ts NemotronCaptionClip out/conversation-caption.mp4 --props=./clip-props/conversation.json",
+    "render:jfk": "remotion render src/index.ts NemotronCaptionClip out/jfk-caption.mp4 --props=./clip-props/jfk.json",
+    "render:artemis": "remotion render src/index.ts NemotronCaptionClip out/artemis-caption.mp4 --props=./clip-props/artemis.json",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

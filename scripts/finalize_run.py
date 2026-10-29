@@ -74,26 +74,6 @@ def main() -> None:
         raise ValueError("Word starts are not chronological")
 
     (ROOT / "runs/demo_conversation.srt").write_text(make_srt(words))
-    normalized_tokens = [re.sub(r"[^a-z0-9]+", "", w["word"].lower()) for w in words]
-    search = "product review" if any(
-        normalized_tokens[i:i + 2] == ["product", "review"]
-        for i in range(len(normalized_tokens) - 1)
-    ) else next((token for token in normalized_tokens if len(token) >= 4), "")
-    props = {
-        "result": {
-            "title": "Hear the moment. Find the words.",
-            "model": result["model"],
-            "request_seconds": result["request_seconds"],
-            "audio_duration_seconds": result["audio_duration_seconds"],
-            "words": words,
-            "demo_wav_path": "demo_conversation.wav",
-        },
-        "hardware": "1 × NVIDIA H100 80 GB",
-        "search_query": search,
-        "audit_note": "Original synthetic dialogue; raw vLLM response retained. Review speaker turns against audio.",
-        "play_audio": True,
-    }
-    (ROOT / "video/result.props.json").write_text(json.dumps(props, ensure_ascii=False, indent=2) + "\n")
     manifest = {
         "project": "Nemotron 3.5 Transcribe recorded-audio demo",
         "model": result["model"],
@@ -112,7 +92,7 @@ def main() -> None:
         "source_model_card": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B",
     }
     (ROOT / "runs/manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n")
-    print(f"Verified {len(words)} words; video search query: {search!r}")
+    print(f"Verified {len(words)} aligned words")
 
 
 if __name__ == "__main__":

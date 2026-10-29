@@ -4,62 +4,32 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b0f0a">
-  <meta name="description" content="Watch real Nemotron 3.5 Transcribe H100 demos with playable, word-synced caption videos.">
+  <meta name="description" content="Three real Nemotron 3.5 Transcribe demos on one H100, each with its own playable video.">
   <title>Nemotron 3.5 Transcribe | H100 demos</title>
   <link rel="stylesheet" href="showcase.css">
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"></span>NEMOTRON <span>TRANSCRIBE</span></a>
-    <nav aria-label="Page navigation"><a href="#overview">Overview</a><a href="#demos">Demos</a><a href="https://github.com/darren236/nemotron-transcribe-h100-demos#run-it-on-an-h100">Setup guide ↗</a></nav>
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>NEMOTRON <span>TRANSCRIBE</span></a>
+    <nav aria-label="Page navigation"><a href="#demos">Demos</a><a href="https://github.com/darren236/nemotron-transcribe-h100-demos#run-it-on-an-h100">Setup guide ↗</a></nav>
   </header>
-  <main id="top">
+  <main>
     <section class="hero">
       <p class="eyebrow">REAL MODEL OUTPUT / ONE H100</p>
       <h1>Hear the moment.<br><em>See the words.</em></h1>
-      <p>Four short videos show NVIDIA Nemotron 3.5 Transcribe turning audio into speaker-tagged, word-timed captions. Every clip uses a saved inference result from one H100 80 GB.</p>
-      <a class="button" href="#overview">Watch the overview ↓</a>
+      <p>Three short demos show NVIDIA Nemotron 3.5 Transcribe turning audio into speaker-tagged, word-timed captions. Choose a recording to play the full video with sound.</p>
+      <a class="button" href="#demos">Choose a demo ↓</a>
     </section>
-
-    <section class="section" id="overview">
-      <div class="section-heading"><p class="eyebrow">00 / THE WORKFLOW</p><h2>One minute, start to finish.</h2><p>Audio enters the model. Word times and speaker tags become searchable transcripts and subtitles.</p></div>
-      <video controls playsinline preload="metadata" poster="docs/showcase.png" aria-label="60-second Nemotron Transcribe overview">
-        <source src="video/out/nemotron-transcribe-demo.mp4" type="video/mp4">
-        Your browser cannot play this video. <a href="video/out/nemotron-transcribe-demo.mp4">Download the MP4</a>.
-      </video>
-      <div class="video-caption"><span>PROJECT OVERVIEW</span><span>60 SEC · H.264 + AAC</span></div>
-    </section>
-
     <section class="section" id="demos">
-      <div class="section-heading"><p class="eyebrow">01–03 / REAL INFERENCE</p><h2>Three audio use cases.</h2><p>Each video plays the exact WAV sent to the model and highlights its returned word timings.</p></div>
-      <div class="grid">
-        <article class="card" id="conversation">
-          <video controls playsinline preload="metadata" poster="docs/thumbnails/conversation.png" aria-label="Two-speaker conversation caption demo">
-            <source src="video/out/conversation-caption.mp4" type="video/mp4">
-            Your browser cannot play this video. <a href="video/out/conversation-caption.mp4">Download the MP4</a>.
-          </video>
-          <div class="card-copy"><p class="eyebrow">01 / SPEAKER TURNS · 34 SEC</p><h3>Two-speaker conversation</h3><p>An original dialogue with speaker-tagged turns and captions that follow each word.</p></div>
-        </article>
-        <article class="card" id="jfk">
-          <video controls playsinline preload="metadata" poster="docs/thumbnails/jfk.png" aria-label="JFK speech caption demo">
-            <source src="video/out/jfk-caption.mp4" type="video/mp4">
-            Your browser cannot play this video. <a href="video/out/jfk-caption.mp4">Download the MP4</a>.
-          </video>
-          <div class="card-copy"><p class="eyebrow">02 / HUMAN SPEECH · 11 SEC</p><h3>JFK speech</h3><p>A historical speech excerpt with word-level subtitle timing.</p></div>
-        </article>
-        <article class="card" id="artemis">
-          <video controls playsinline preload="metadata" poster="docs/thumbnails/artemis.png" aria-label="Artemis mission radio caption demo">
-            <source src="video/out/artemis-caption.mp4" type="video/mp4">
-            Your browser cannot play this video. <a href="video/out/artemis-caption.mp4">Download the MP4</a>.
-          </video>
-          <div class="card-copy"><p class="eyebrow">03 / MISSION RADIO · 22 SEC</p><h3>Artemis mission radio</h3><p>NASA radio audio with unedited model captions. Check uncertain words by listening.</p></div>
-        </article>
+      <div class="section-heading"><p class="eyebrow">01–03 / REAL INFERENCE</p><h2>Three audio use cases.</h2><p>Each full clip plays the exact WAV sent to the model and highlights its returned word timings.</p></div>
+      <div class="demo-links">
+        <a class="demo-link" href="conversation.html"><img src="docs/gifs/conversation.gif" width="640" height="360" alt="Animated preview of the two-speaker conversation"><div class="card-copy"><p class="eyebrow">01 / SPEAKER TURNS · 34 SEC</p><h3>Two-speaker conversation</h3><p>Watch speaker-tagged turns and word-following captions. <span>Play full video ↗</span></p></div></a>
+        <a class="demo-link" href="jfk.html"><img src="docs/gifs/jfk.gif" width="640" height="360" alt="Animated preview of the JFK speech"><div class="card-copy"><p class="eyebrow">02 / HUMAN SPEECH · 11 SEC</p><h3>JFK speech</h3><p>See word-level subtitle timing on a historical speech. <span>Play full video ↗</span></p></div></a>
+        <a class="demo-link" href="artemis.html"><img src="docs/gifs/artemis.gif" width="640" height="360" alt="Animated preview of the Artemis mission radio"><div class="card-copy"><p class="eyebrow">03 / MISSION RADIO · 22 SEC</p><h3>Artemis mission radio</h3><p>Inspect unedited captions on NASA radio audio. <span>Play full video ↗</span></p></div></a>
       </div>
     </section>
-
-    <section class="cta"><div><p class="eyebrow">RUN THE MODEL</p><h2>Reproduce these demos on an H100.</h2><p>The README includes the model download, vLLM setup, commands for each recording, and SRT export.</p></div><a class="button" href="https://github.com/darren236/nemotron-transcribe-h100-demos#run-it-on-an-h100">Open the setup guide ↗</a></section>
+    <section class="cta"><div><p class="eyebrow">RUN THE MODEL</p><h2>Reproduce these demos on an H100.</h2><p>The README includes the model download, vLLM setup, and commands for each recording.</p></div><a class="button" href="https://github.com/darren236/nemotron-transcribe-h100-demos#run-it-on-an-h100">Open the setup guide ↗</a></section>
   </main>
   <footer><span>NEMOTRON 3.5 TRANSCRIBE / H100 DEMOS</span><a href="https://github.com/darren236/nemotron-transcribe-h100-demos">View source on GitHub ↗</a></footer>
-  <script src="showcase.js"></script>
 </body>
 </html>
