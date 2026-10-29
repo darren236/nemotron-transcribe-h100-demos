@@ -1,10 +1,10 @@
 # Run Nemotron 3.5 Transcribe on one Brev H100
 
-This runbook records the working setup from 29 October 2026. It is a local draft for a later infrastructure guide. It uses NVIDIA's [Nemotron 3.5 Transcribe model card](https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B), specifically the vLLM recipe with speaker tags and CTC word timestamps.
+This runbook records the working setup from 29 October 2026. It uses NVIDIA's [Nemotron 3.5 Transcribe model card](https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B), specifically the vLLM recipe with speaker tags and CTC word timestamps.
 
 ## Instance and access
 
-- Brev organization: `nvaitc_workshop` (`org-3DNuLokQkaLYdhZcZMjwirIZu3V`).
+- Brev organization used for this run: `nvaitc_workshop`. Use your own organization and instance names when repeating the setup.
 - Instance: `nemotron-transcribe-v1`, Nebius `gpu-h100-sxm.1gpu-16vcpu-200gb` in `eu-north1` (Finland), 1 × H100 80 GB, 16 vCPUs, 200 GiB RAM, 256 GiB disk.
 - Brev showed $5.44/hour running, including $0.04/hour storage; this instance can be stopped and restarted.
 - Keep vLLM bound to `127.0.0.1:8000`. No public HTTP endpoint is needed.

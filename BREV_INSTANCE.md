@@ -1,6 +1,6 @@
 # Brev H100 instance used for this demo
 
-Darren created `nemotron-transcribe-v1` (ID `2qvehqt69`) in the `nvaitc_workshop` organization (`org-3DNuLokQkaLYdhZcZMjwirIZu3V`) on 29 October 2026. He authorized its automatic use for this project. The instance was used twice for real inference, then **verified STOPPED** with `brev ls --all` after all three results were copied locally. No idle H100 is currently running for this project.
+This project used `nemotron-transcribe-v1` in the `nvaitc_workshop` organization on 29 October 2026. The instance was used twice for real inference, then **verified STOPPED** with `brev ls --all` after all three results were copied locally. No idle H100 is currently running for this project.
 
 | Setting | Actual |
 | --- | --- |
@@ -13,6 +13,6 @@ Darren created `nemotron-transcribe-v1` (ID `2qvehqt69`) in the `nvaitc_workshop
 | Stop/start | Supported, disk retained |
 | Last observed status | `STOPPED` |
 
-This type matched NVIDIA's one-H100 BF16 recipe and could be stopped immediately after inference. The cheaper Hyperstack H100 option shown in the org did not support stop/start. Historical approval-review blocks on a proposed Deploy action are superseded by Darren's subsequent creation and authorization of this instance.
+This type matched NVIDIA's one-H100 BF16 recipe and could be stopped immediately after inference. The cheaper Hyperstack H100 option shown in the organization did not support stop/start.
 
 The exact setup and shutdown commands are in [docs/H100_RUNBOOK.md](docs/H100_RUNBOOK.md). No card details, login codes, or SSH material are in this repository.
