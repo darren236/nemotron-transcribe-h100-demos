@@ -1,5 +1,7 @@
 # Three real Nemotron transcription demos
 
+For a step-by-step H100 setup and one command per use case, start with the [user guide](../docs/USER_GUIDE.md).
+
 The [viewer](../index.html) lets you switch among three recordings. Every listed JSON is a saved response from `nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B` on the `nvaitc_workshop` H100, with the raw vLLM response, CTC word timings, speaker tags, and a SHA-256 binding it to the exact WAV. The browser rechecks that hash before enabling playback. The recording switcher replays saved inference; it does not make a new GPU request on each click.
 
 | Demo | Audio | What it shows |
