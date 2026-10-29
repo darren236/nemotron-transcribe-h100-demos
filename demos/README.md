@@ -2,13 +2,13 @@
 
 For H100 setup and one command per use case, start with the [README guide](../README.md#run-it-on-an-h100).
 
-The [viewer](../index.html) lets you switch among three recordings. Every listed JSON is a saved response from `nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B` on the `nvaitc_workshop` H100, with the raw vLLM response, CTC word timings, speaker tags, and a SHA-256 binding it to the exact WAV. The browser rechecks that hash before enabling playback. The recording switcher replays saved inference; it does not make a new GPU request on each click.
+The [viewer](../viewer.html) lets you switch among three recordings. Every listed JSON is a saved response from `nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B` on the `nvaitc_workshop` H100, with the raw vLLM response, CTC word timings, speaker tags, and a SHA-256 binding it to the exact WAV. The browser rechecks that hash before enabling playback. The recording switcher replays saved inference; it does not make a new GPU request on each click.
 
 | Demo | Audio | What it shows |
 | --- | --- | --- |
-| Two-speaker conversation | [Original Kokoro-generated dialogue](../assets/demo_conversation.wav) | [Caption clip](../video/out/conversation-caption.mp4), word-level sync, six speaker turns, search and SRT export. |
-| JFK speech | [11-second human-speech clip](../assets/jfk_speech.wav) | [Caption clip](../video/out/jfk-caption.mp4) and search on a public historical recording. Source: [OpenAI Whisper test fixture](https://github.com/openai/whisper/blob/main/tests/jfk.flac). |
-| Artemis mission radio | [22-second NASA radio clip](../assets/artemis_houston.wav) | [Caption clip](../video/out/artemis-caption.mp4) and unedited model output on authentic mission audio. Source: [NASA Artemis Audio Library](https://www.nasa.gov/artemisaudio/). |
+| Two-speaker conversation | [Original Kokoro-generated dialogue](../assets/demo_conversation.wav) | [Play caption clip](https://darren236.github.io/nemotron-transcribe-h100-demos/#conversation), word-level sync, six speaker turns, search and SRT export. |
+| JFK speech | [11-second human-speech clip](../assets/jfk_speech.wav) | [Play caption clip](https://darren236.github.io/nemotron-transcribe-h100-demos/#jfk) and search on a public historical recording. Source: [OpenAI Whisper test fixture](https://github.com/openai/whisper/blob/main/tests/jfk.flac). |
+| Artemis mission radio | [22-second NASA radio clip](../assets/artemis_houston.wav) | [Play caption clip](https://darren236.github.io/nemotron-transcribe-h100-demos/#artemis) and unedited model output on authentic mission audio. Source: [NASA Artemis Audio Library](https://www.nasa.gov/artemisaudio/). |
 
 The original JFK FLAC and NASA MP3 are retained in `assets/originals/`. NASA describes its Artemis audio as available under its [media usage guidelines](https://www.nasa.gov/artemisaudio/). The converted WAVs are mono, 16 kHz, PCM16, matching the inference script's input requirements. See [runs/gallery_manifest.json](../runs/gallery_manifest.json) for source and input hashes, model revision, request times, alignment status and output paths. The radio transcript is unedited model output and should be checked against the recording before reusing its captions. The examples are demonstrations, not a benchmark or a claim of perfect accuracy.
 

@@ -2,29 +2,29 @@
 
 Three short demos using **real NVIDIA Nemotron 3.5 Transcribe inference** on one H100 80 GB. Watch word-synced captions on a conversation, a speech, and mission radio; then run the same model and audio yourself.
 
-[**Watch the 60-second overview**](video/out/nemotron-transcribe-demo.mp4) · [**Set up and run inference**](#run-it-on-an-h100)
+[**Watch the 60-second overview**](https://darren236.github.io/nemotron-transcribe-h100-demos/#overview) · [**Watch all demos**](https://darren236.github.io/nemotron-transcribe-h100-demos/#demos) · [**Set up and run inference**](#run-it-on-an-h100)
 
-[![Watch the Nemotron 3.5 Transcribe overview](docs/showcase.png)](video/out/nemotron-transcribe-demo.mp4)
+[![Watch the Nemotron 3.5 Transcribe overview](docs/showcase.png)](https://darren236.github.io/nemotron-transcribe-h100-demos/#overview)
 
 ## Demo videos
 
 ### Two-speaker conversation · 34 seconds
 
-[![Watch the two-speaker conversation](docs/thumbnails/conversation.png)](video/out/conversation-caption.mp4)
+[![Watch the two-speaker conversation](docs/thumbnails/conversation.png)](https://darren236.github.io/nemotron-transcribe-h100-demos/#conversation)
 
-An original two-voice dialogue shows speaker-tagged turns and word-by-word captions. [Watch video](video/out/conversation-caption.mp4) · [Run this example](#two-speaker-conversation)
+An original two-voice dialogue shows speaker-tagged turns and word-by-word captions. [Watch video](https://darren236.github.io/nemotron-transcribe-h100-demos/#conversation) · [Run this example](#two-speaker-conversation)
 
 ### JFK speech · 11 seconds
 
-[![Watch the JFK speech](docs/thumbnails/jfk.png)](video/out/jfk-caption.mp4)
+[![Watch the JFK speech](docs/thumbnails/jfk.png)](https://darren236.github.io/nemotron-transcribe-h100-demos/#jfk)
 
-A human-speech clip shows word timestamps and subtitles on the [JFK recording used by Whisper](https://github.com/openai/whisper/blob/main/tests/jfk.flac). [Watch video](video/out/jfk-caption.mp4) · [Run this example](#jfk-speech)
+A human-speech clip shows word timestamps and subtitles on the [JFK recording used by Whisper](https://github.com/openai/whisper/blob/main/tests/jfk.flac). [Watch video](https://darren236.github.io/nemotron-transcribe-h100-demos/#jfk) · [Run this example](#jfk-speech)
 
 ### Artemis mission radio · 22 seconds
 
-[![Watch the Artemis mission radio](docs/thumbnails/artemis.png)](video/out/artemis-caption.mp4)
+[![Watch the Artemis mission radio](docs/thumbnails/artemis.png)](https://darren236.github.io/nemotron-transcribe-h100-demos/#artemis)
 
-The model transcribes a clip from the [NASA Artemis Audio Library](https://www.nasa.gov/artemisaudio/). The captions show its unedited output, including words that should be checked by listening. [Watch video](video/out/artemis-caption.mp4) · [Run this example](#artemis-mission-radio)
+The model transcribes a clip from the [NASA Artemis Audio Library](https://www.nasa.gov/artemisaudio/). The captions show its unedited output, including words that should be checked by listening. [Watch video](https://darren236.github.io/nemotron-transcribe-h100-demos/#artemis) · [Run this example](#artemis-mission-radio)
 
 ## Run it on an H100
 

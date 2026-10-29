@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nemotron Transcribe · Recording desk</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-rule" aria-hidden="true"></span><span>NEMOTRON <small>TRANSCRIBE</small></span></div>
+      <div class="top-note">RECORDED AUDIO / TRANSCRIPT VIEWER</div>
+    </header>
+
+    <main>
+      <section class="intro">
+        <div class="eyebrow"><span class="pulse"></span> DEMO WORKSPACE <span class="eyebrow-line"></span> 03 RECORDINGS</div>
+        <h1>Hear the moment.<br><em>Find the words.</em></h1>
+        <p>A recording becomes a transcript you can follow, search, and turn into subtitles.</p>
+      </section>
+
+      <section class="demo-chooser" aria-label="Choose a Nemotron demo">
+        <div class="demo-chooser-head"><span class="eyebrow muted">CHOOSE A RECORDING</span><span>Each transcript was produced by Nemotron on the H100</span></div>
+        <div id="demo-options" class="demo-options"></div>
+        <div class="demo-actions"><a id="demo-video" href="#" target="_blank" rel="noopener noreferrer">Watch synchronized clip ↗</a><a id="demo-result" href="#" target="_blank" rel="noopener noreferrer">Inspect model JSON ↗</a></div>
+      </section>
+
+      <section class="desk" aria-label="Transcription demo">
+        <div class="desk-head">
+          <div><div class="eyebrow muted">CURRENT RECORDING</div><h2 id="recording-title">A short conversation</h2></div>
+          <span id="source-badge" class="badge sample">ILLUSTRATIVE SAMPLE</span>
+        </div>
+
+        <div class="player">
+          <button id="play" class="play" aria-label="Play or pause" disabled>▶</button>
+          <div class="player-body">
+            <div class="player-top"><span id="audio-label">Select the matching audio to enable playback</span><span id="time">00:00 / 00:15</span></div>
+            <div id="waveform" class="waveform" aria-hidden="true"></div>
+            <input id="seek" type="range" min="0" max="15" value="0" step="0.01" aria-label="Seek recording" disabled>
+          </div>
+          <audio id="audio" preload="metadata"></audio>
+        </div>
+
+        <div class="tool-row">
+          <label class="file-button">＋ Select audio<input id="audio-file" type="file" accept="audio/*,.wav,.mp3,.flac,.ogg"></label>
+          <label class="file-button">↥ Load result JSON<input id="json-file" type="file" accept="application/json,.json"></label>
+          <button id="export" class="file-button export">↓ Export SRT</button>
+        </div>
+
+        <div class="content-grid">
+          <aside class="side-panel">
+            <div class="panel-title">SESSION NOTES</div>
+            <div class="metric"><span>WORDS</span><strong id="word-count">—</strong></div>
+            <div class="metric"><span>SPEAKERS</span><strong id="speaker-count">—</strong></div>
+            <div class="metric"><span>LENGTH</span><strong id="length">—</strong></div>
+            <div class="rule"></div>
+            <div class="panel-title">SOURCE</div>
+            <p id="source-note" class="source-note">Illustrative transcript for layout preview. No model inference has run.</p>
+            <a id="source-link" class="source-link" href="#" target="_blank" rel="noopener noreferrer" hidden>View audio source ↗</a>
+            <div class="rule"></div>
+            <div class="panel-title">MODEL</div>
+            <p id="model-name" class="model-name">Illustrative layout preview</p>
+          </aside>
+
+          <section class="transcript-panel" aria-label="Transcript">
+            <div class="transcript-head"><div><div class="eyebrow muted">01 / TRANSCRIPT</div><h3>In the recording</h3></div><label class="search">⌕ <input id="search" type="search" placeholder="Search words" aria-label="Search transcript"></label></div>
+            <div id="notice" class="notice">Preview text is illustrative. Select an audio file and a matching model result to see synchronized playback.</div>
+            <div id="transcript" class="transcript"></div>
+            <div id="empty" class="empty" hidden>No matching words. Try another search.</div>
+          </section>
+        </div>
+      </section>
+      <footer>BUILT FOR A SINGLE H100 DEMO <span>·</span> <span id="footer-status">MODEL OUTPUT WILL BE LABELLED AFTER INFERENCE</span></footer>
+    </main>
+  </div>
+  <script src="viewer.js?v=20261029-multi-demo"></script>
+</body>
+</html>
