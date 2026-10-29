@@ -13,7 +13,7 @@ const Stat: React.FC<{label: string; value: string; delay: number}> = ({label, v
       style={{
         width: 836,
         padding: '16px 30px',
-        borderRadius: 24,
+        borderRadius: 8,
         background: '#FFFFFF0C',
         border: `2px solid ${C.cyan}44`,
         opacity: e,
@@ -36,7 +36,7 @@ const ChipGraphic: React.FC = () => {
         width: 560,
         height: 560,
         padding: 40,
-        borderRadius: 48,
+        borderRadius: 16,
         background: `linear-gradient(145deg, ${C.ink3}, ${C.ink1})`,
         border: `3px solid ${C.glass}88`,
         boxShadow: `0 0 90px ${C.glass}33`,
@@ -55,7 +55,7 @@ const ChipGraphic: React.FC = () => {
           <div
             key={i}
             style={{
-              borderRadius: 10,
+              borderRadius: 3,
               background: i % 2 ? C.glass : C.cyan,
               opacity: 0.14 + 0.8 * lit * lit,
             }}
@@ -82,9 +82,9 @@ const Node: React.FC<{label: string; sub: string; litAt: number; mono?: boolean}
       style={{
         flex: 1,
         height: 150,
-        borderRadius: 24,
+        borderRadius: 8,
         padding: '18px 28px',
-        background: `rgba(143,240,220,${0.05 + 0.13 * lit})`,
+        background: `rgba(118,185,0,${0.05 + 0.13 * lit})`,
         border: `2px solid ${lit > 0.5 ? C.glass : C.cyan + '44'}`,
         boxShadow: lit > 0.5 ? `0 0 40px ${C.glass}44` : undefined,
         overflow: 'hidden',

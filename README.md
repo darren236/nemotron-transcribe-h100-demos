@@ -28,6 +28,8 @@ The inference endpoint binds only to `127.0.0.1:8000` on the H100. It has no pub
 
 Claude Code authored the Remotion scene scaffold from a local brief, following the Ian_work workflow. Codex wired in the verified model output, generated local Kokoro narration, checked the rendered frames, and exported the MP4. See [video/README.md](video/README.md) for render commands and scene details. The source, render inputs, and final MP4 are in Git; run `cd video && npm ci && npm run render -- --props=./result.props.json` to rebuild it.
 
+The viewer and film use an NVIDIA-inspired palette: [NVIDIA Green `#76B900`, dark gray and white](https://www.nvidia.com/content/dam/en-zz/Solutions/about-us/documents/NVIDIA-Trademark-and-Logo-Usage-Guidelines.pdf). Their graphics are custom; no NVIDIA logo asset is embedded.
+
 ## Reference
 
 - [NVIDIA model card and vLLM/CTC recipe](https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B)

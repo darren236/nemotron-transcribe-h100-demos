@@ -13,16 +13,16 @@ export const SCENES = {
 } as const;
 
 export const C = {
-  ink0: '#030D14',
-  ink1: '#061A24',
-  ink2: '#0B2B38',
-  ink3: '#123E4E',
-  glass: '#8FF0DC',
-  cyan: '#4FD8E8',
-  mist: '#E3F6F4',
-  dim: '#7FA9B3',
-  amber: '#F2C94C',
-  speakers: ['#8FF0DC', '#4FD8E8', '#B9ADFF', '#FFC98B'],
+  ink0: '#0B0D0B',
+  ink1: '#171A16',
+  ink2: '#20261D',
+  ink3: '#30392B',
+  glass: '#76B900',
+  cyan: '#A6D542',
+  mist: '#F7F8F4',
+  dim: '#AAB4A3',
+  amber: '#E2C061',
+  speakers: ['#A6D542', '#F7F8F4', '#76B900', '#ABB5A1'],
 } as const;
 
 export const FONT_SANS = 'Inter, "Segoe UI", "Helvetica Neue", Arial, sans-serif';

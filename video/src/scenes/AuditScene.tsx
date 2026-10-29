@@ -85,7 +85,7 @@ export const AuditScene: React.FC<{d: Derived; props: DemoProps}> = ({d, props})
           padding: '28px 40px',
           borderRadius: 24,
           borderLeft: `10px solid ${C.glass}`,
-          background: '#8FF0DC12',
+          background: '#76B90012',
           fontSize: 42,
           lineHeight: 1.35,
           opacity: ease(f, 72),

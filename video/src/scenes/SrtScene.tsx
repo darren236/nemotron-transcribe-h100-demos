@@ -47,7 +47,7 @@ export const SrtScene: React.FC<{d: Derived}> = ({d}) => {
           width: 1728,
           height: 560,
           borderRadius: 28,
-          background: '#020A10',
+          background: '#101310',
           border: `2px solid ${C.cyan}44`,
           padding: '30px 44px',
           boxSizing: 'border-box',

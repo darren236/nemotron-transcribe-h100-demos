@@ -2,6 +2,8 @@
 
 A 60-second, 1920×1080, 30 fps Remotion composition (`NemotronTranscribeDemo`, 1800 frames). Everything under `video/` is self-contained. There is no external art, music or fonts.
 
+Visual theme: NVIDIA Green `#76B900`, charcoal and white, with crisp green rules and rectangular panels. Scene graphics are original; no NVIDIA logo asset is used. The palette follows [NVIDIA's published color guidance](https://www.nvidia.com/content/dam/en-zz/Solutions/about-us/documents/NVIDIA-Trademark-and-Logo-Usage-Guidelines.pdf).
+
 The delivered video is driven by `result.props.json`, generated from the real H100 response. The composition still supports a clearly labelled placeholder for development when real props are omitted. Scene narration was synthesized locally with Kokoro Sarah and is bundled under `public/narration/`.
 
 ## Install
