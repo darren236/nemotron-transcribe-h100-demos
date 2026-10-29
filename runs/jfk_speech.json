@@ -1,0 +1,502 @@
+{
+  "schema_version": 1,
+  "status": "model_output",
+  "title": "jfk speech",
+  "model": "nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B",
+  "audio_file": "jfk_speech.wav",
+  "audio_sha256": "59a52d1b7fe141030a50d9a66946311ec04aefc1d46012e7b9dadbbea97420e4",
+  "audio_duration_seconds": 11.0,
+  "prompt": "Transcribe this audio with punctuation and capitalization. Include all spoken words and verbal fillers. Write numbers in their standard written form. Put speaker tags <spk:0> <spk:1> <spk:2> <spk:3> on the transcription.",
+  "text": "<spk:0> And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+  "words": [
+    {
+      "word": "And",
+      "start": 0.28,
+      "end": 0.638,
+      "speaker": "0"
+    },
+    {
+      "word": "so,",
+      "start": 0.638,
+      "end": 1.036,
+      "speaker": "0"
+    },
+    {
+      "word": "my",
+      "start": 1.036,
+      "end": 1.355,
+      "speaker": "0"
+    },
+    {
+      "word": "fellow",
+      "start": 1.355,
+      "end": 1.674,
+      "speaker": "0"
+    },
+    {
+      "word": "Americans,",
+      "start": 1.674,
+      "end": 2.28,
+      "speaker": "0"
+    },
+    {
+      "word": "ask",
+      "start": 3.27,
+      "end": 4.065,
+      "speaker": "0"
+    },
+    {
+      "word": "not",
+      "start": 4.065,
+      "end": 4.57,
+      "speaker": "0"
+    },
+    {
+      "word": "what",
+      "start": 5.36,
+      "end": 5.659,
+      "speaker": "0"
+    },
+    {
+      "word": "your",
+      "start": 5.659,
+      "end": 5.978,
+      "speaker": "0"
+    },
+    {
+      "word": "country",
+      "start": 5.978,
+      "end": 6.457,
+      "speaker": "0"
+    },
+    {
+      "word": "can",
+      "start": 6.457,
+      "end": 6.696,
+      "speaker": "0"
+    },
+    {
+      "word": "do",
+      "start": 6.696,
+      "end": 6.935,
+      "speaker": "0"
+    },
+    {
+      "word": "for",
+      "start": 6.935,
+      "end": 7.174,
+      "speaker": "0"
+    },
+    {
+      "word": "you,",
+      "start": 7.174,
+      "end": 8.13,
+      "speaker": "0"
+    },
+    {
+      "word": "ask",
+      "start": 8.21,
+      "end": 8.688,
+      "speaker": "0"
+    },
+    {
+      "word": "what",
+      "start": 8.688,
+      "end": 8.928,
+      "speaker": "0"
+    },
+    {
+      "word": "you",
+      "start": 8.928,
+      "end": 9.167,
+      "speaker": "0"
+    },
+    {
+      "word": "can",
+      "start": 9.167,
+      "end": 9.406,
+      "speaker": "0"
+    },
+    {
+      "word": "do",
+      "start": 9.406,
+      "end": 9.645,
+      "speaker": "0"
+    },
+    {
+      "word": "for",
+      "start": 9.645,
+      "end": 9.804,
+      "speaker": "0"
+    },
+    {
+      "word": "your",
+      "start": 9.804,
+      "end": 10.043,
+      "speaker": "0"
+    },
+    {
+      "word": "country.",
+      "start": 10.043,
+      "end": 10.64,
+      "speaker": "0"
+    }
+  ],
+  "alignment": {
+    "words": [
+      {
+        "word": "And",
+        "start": 0.28,
+        "end": 0.638,
+        "speaker": "0"
+      },
+      {
+        "word": "so,",
+        "start": 0.638,
+        "end": 1.036,
+        "speaker": "0"
+      },
+      {
+        "word": "my",
+        "start": 1.036,
+        "end": 1.355,
+        "speaker": "0"
+      },
+      {
+        "word": "fellow",
+        "start": 1.355,
+        "end": 1.674,
+        "speaker": "0"
+      },
+      {
+        "word": "Americans,",
+        "start": 1.674,
+        "end": 2.28,
+        "speaker": "0"
+      },
+      {
+        "word": "ask",
+        "start": 3.27,
+        "end": 4.065,
+        "speaker": "0"
+      },
+      {
+        "word": "not",
+        "start": 4.065,
+        "end": 4.57,
+        "speaker": "0"
+      },
+      {
+        "word": "what",
+        "start": 5.36,
+        "end": 5.659,
+        "speaker": "0"
+      },
+      {
+        "word": "your",
+        "start": 5.659,
+        "end": 5.978,
+        "speaker": "0"
+      },
+      {
+        "word": "country",
+        "start": 5.978,
+        "end": 6.457,
+        "speaker": "0"
+      },
+      {
+        "word": "can",
+        "start": 6.457,
+        "end": 6.696,
+        "speaker": "0"
+      },
+      {
+        "word": "do",
+        "start": 6.696,
+        "end": 6.935,
+        "speaker": "0"
+      },
+      {
+        "word": "for",
+        "start": 6.935,
+        "end": 7.174,
+        "speaker": "0"
+      },
+      {
+        "word": "you,",
+        "start": 7.174,
+        "end": 8.13,
+        "speaker": "0"
+      },
+      {
+        "word": "ask",
+        "start": 8.21,
+        "end": 8.688,
+        "speaker": "0"
+      },
+      {
+        "word": "what",
+        "start": 8.688,
+        "end": 8.928,
+        "speaker": "0"
+      },
+      {
+        "word": "you",
+        "start": 8.928,
+        "end": 9.167,
+        "speaker": "0"
+      },
+      {
+        "word": "can",
+        "start": 9.167,
+        "end": 9.406,
+        "speaker": "0"
+      },
+      {
+        "word": "do",
+        "start": 9.406,
+        "end": 9.645,
+        "speaker": "0"
+      },
+      {
+        "word": "for",
+        "start": 9.645,
+        "end": 9.804,
+        "speaker": "0"
+      },
+      {
+        "word": "your",
+        "start": 9.804,
+        "end": 10.043,
+        "speaker": "0"
+      },
+      {
+        "word": "country.",
+        "start": 10.043,
+        "end": 10.64,
+        "speaker": "0"
+      }
+    ],
+    "diarization": [
+      {
+        "speaker": 0,
+        "start": 0.28,
+        "end": 2.28
+      },
+      {
+        "speaker": 0,
+        "start": 3.27,
+        "end": 4.57
+      },
+      {
+        "speaker": 0,
+        "start": 5.36,
+        "end": 10.64
+      }
+    ],
+    "speaker_tag_to_diarization_speaker": {
+      "0": 0
+    },
+    "error": null
+  },
+  "raw_response": {
+    "id": "chatcmpl-ctc-31ed75a32bb349f085299eb4f5231e43",
+    "object": "chat.completion",
+    "created": 1793263094,
+    "model": "nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "<spk:0> And so, my fellow Americans, ask not what your country can do for you, ask what you can do for your country.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.32.0-ccb6983e",
+    "usage": {
+      "prompt_tokens": 198,
+      "total_tokens": 226,
+      "completion_tokens": 28,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null,
+    "ctc_timestamps": {
+      "words": [
+        {
+          "word": "And",
+          "start": 0.28,
+          "end": 0.638,
+          "speaker": "0"
+        },
+        {
+          "word": "so,",
+          "start": 0.638,
+          "end": 1.036,
+          "speaker": "0"
+        },
+        {
+          "word": "my",
+          "start": 1.036,
+          "end": 1.355,
+          "speaker": "0"
+        },
+        {
+          "word": "fellow",
+          "start": 1.355,
+          "end": 1.674,
+          "speaker": "0"
+        },
+        {
+          "word": "Americans,",
+          "start": 1.674,
+          "end": 2.28,
+          "speaker": "0"
+        },
+        {
+          "word": "ask",
+          "start": 3.27,
+          "end": 4.065,
+          "speaker": "0"
+        },
+        {
+          "word": "not",
+          "start": 4.065,
+          "end": 4.57,
+          "speaker": "0"
+        },
+        {
+          "word": "what",
+          "start": 5.36,
+          "end": 5.659,
+          "speaker": "0"
+        },
+        {
+          "word": "your",
+          "start": 5.659,
+          "end": 5.978,
+          "speaker": "0"
+        },
+        {
+          "word": "country",
+          "start": 5.978,
+          "end": 6.457,
+          "speaker": "0"
+        },
+        {
+          "word": "can",
+          "start": 6.457,
+          "end": 6.696,
+          "speaker": "0"
+        },
+        {
+          "word": "do",
+          "start": 6.696,
+          "end": 6.935,
+          "speaker": "0"
+        },
+        {
+          "word": "for",
+          "start": 6.935,
+          "end": 7.174,
+          "speaker": "0"
+        },
+        {
+          "word": "you,",
+          "start": 7.174,
+          "end": 8.13,
+          "speaker": "0"
+        },
+        {
+          "word": "ask",
+          "start": 8.21,
+          "end": 8.688,
+          "speaker": "0"
+        },
+        {
+          "word": "what",
+          "start": 8.688,
+          "end": 8.928,
+          "speaker": "0"
+        },
+        {
+          "word": "you",
+          "start": 8.928,
+          "end": 9.167,
+          "speaker": "0"
+        },
+        {
+          "word": "can",
+          "start": 9.167,
+          "end": 9.406,
+          "speaker": "0"
+        },
+        {
+          "word": "do",
+          "start": 9.406,
+          "end": 9.645,
+          "speaker": "0"
+        },
+        {
+          "word": "for",
+          "start": 9.645,
+          "end": 9.804,
+          "speaker": "0"
+        },
+        {
+          "word": "your",
+          "start": 9.804,
+          "end": 10.043,
+          "speaker": "0"
+        },
+        {
+          "word": "country.",
+          "start": 10.043,
+          "end": 10.64,
+          "speaker": "0"
+        }
+      ],
+      "diarization": [
+        {
+          "speaker": 0,
+          "start": 0.28,
+          "end": 2.28
+        },
+        {
+          "speaker": 0,
+          "start": 3.27,
+          "end": 4.57
+        },
+        {
+          "speaker": 0,
+          "start": 5.36,
+          "end": 10.64
+        }
+      ],
+      "speaker_tag_to_diarization_speaker": {
+        "0": 0
+      },
+      "error": null
+    }
+  },
+  "request_seconds": 8.96
+}

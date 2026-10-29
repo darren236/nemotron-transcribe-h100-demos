@@ -1,0 +1,81 @@
+{
+  "purpose": "Saved outputs from actual H100 Nemotron inference; not a benchmark",
+  "model": "nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B",
+  "model_revision": "9d8cd6b79bfdd427b6558a5fdbf76fcaf8c75341",
+  "nemo_speech_commit": "88846dcfa90233dce178cc3d5d9dd6065cdc8380",
+  "vllm_version": "0.32.0",
+  "demos": [
+    {
+      "id": "conversation",
+      "title": "Two-speaker conversation",
+      "source": "Locally synthesized with Kokoro",
+      "source_url": null,
+      "source_file": "assets/demo_conversation_script.json",
+      "source_sha256": "594056506c366c8c7c857606172dfe5a034518e958a22aa10a7a023c595cab90",
+      "input_wav": "assets/demo_conversation.wav",
+      "input_sha256": "2e3cc6ad2193fa3fe25b2fe2867af4a4ba2190a244c5387afd71c0810665edac",
+      "result": "runs/demo_conversation.json",
+      "result_sha256": "649a3776e73111486937cd38937a892b987d4a097788c2eca803d1f5c59b1481",
+      "srt": "runs/demo_conversation.srt",
+      "video_props": "video/clip-props/conversation.json",
+      "video": "video/out/conversation-caption.mp4",
+      "video_sha256": "812356ac47836d7ab5b086b0b2078befbae8d2d03cd403bd382f74a2afa6c871",
+      "duration_seconds": 34.2373125,
+      "request_seconds": 2.666,
+      "aligned_words": 90,
+      "speaker_tags": [
+        "0",
+        "1"
+      ],
+      "alignment_error": null
+    },
+    {
+      "id": "jfk",
+      "title": "JFK speech",
+      "source": "OpenAI Whisper test audio (JFK speech)",
+      "source_url": "https://github.com/openai/whisper/blob/main/tests/jfk.flac",
+      "source_file": "assets/originals/jfk.flac",
+      "source_sha256": "63a4b1e4c1dc655ac70961ffbf518acd249df237e5a0152faae9a4a836949715",
+      "input_wav": "assets/jfk_speech.wav",
+      "input_sha256": "59a52d1b7fe141030a50d9a66946311ec04aefc1d46012e7b9dadbbea97420e4",
+      "result": "runs/jfk_speech.json",
+      "result_sha256": "9291dc27137c20001f3a4c265c0b3f005bcca0d475b6d14fcd92ce847b582719",
+      "srt": "runs/jfk_speech.srt",
+      "video_props": "video/clip-props/jfk.json",
+      "video": "video/out/jfk-caption.mp4",
+      "video_sha256": "86a97bf095f286f1f879789b5bdc3f8ad872553237fbc777532c2895a33f943d",
+      "duration_seconds": 11.0,
+      "request_seconds": 8.96,
+      "aligned_words": 22,
+      "speaker_tags": [
+        "0"
+      ],
+      "alignment_error": null
+    },
+    {
+      "id": "artemis",
+      "title": "Artemis mission radio",
+      "source": "NASA Artemis Audio Library",
+      "source_url": "https://www.nasa.gov/artemisaudio/",
+      "source_file": "assets/originals/artemis_houston.mp3",
+      "source_sha256": "ebfd898826f3684a3fc8af062280e66d3d4a6e4bbd14cfe0d98e60fa6d104d73",
+      "input_wav": "assets/artemis_houston.wav",
+      "input_sha256": "9220316c529d7eb0ed074aaa92d8bac8db0f30e4377cdc3d7acfcba63570cb8f",
+      "result": "runs/artemis_houston.json",
+      "result_sha256": "58ba3e808dc4d60f7d01b2776f48495390100fc5c865cbe12ad093d259acb60b",
+      "srt": "runs/artemis_houston.srt",
+      "video_props": "video/clip-props/artemis.json",
+      "video": "video/out/artemis-caption.mp4",
+      "video_sha256": "01bcd87258a383a430f52e3a9b0b99cc6202a862ac193859e054cc3228712242",
+      "duration_seconds": 21.9740625,
+      "request_seconds": 0.498,
+      "aligned_words": 45,
+      "speaker_tags": [
+        "0",
+        "1",
+        "2"
+      ],
+      "alignment_error": null
+    }
+  ]
+}

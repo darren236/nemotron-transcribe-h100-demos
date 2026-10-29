@@ -1,3 +1,6 @@
 node_modules
 out/*
 !out/nemotron-transcribe-demo.mp4
+!out/conversation-caption.mp4
+!out/jfk-caption.mp4
+!out/artemis-caption.mp4

@@ -1,6 +1,6 @@
 # Brev H100 instance used for this demo
 
-Darren created `nemotron-transcribe-v1` (ID `2qvehqt69`) in the `nvaitc_workshop` organization (`org-3DNuLokQkaLYdhZcZMjwirIZu3V`) on 29 October 2026. He authorized its automatic use for this project. The instance was started, used for inference, and **verified STOPPED** with `brev ls --all` after the result was copied locally. No idle H100 is currently running for this project.
+Darren created `nemotron-transcribe-v1` (ID `2qvehqt69`) in the `nvaitc_workshop` organization (`org-3DNuLokQkaLYdhZcZMjwirIZu3V`) on 29 October 2026. He authorized its automatic use for this project. The instance was used twice for real inference, then **verified STOPPED** with `brev ls --all` after all three results were copied locally. No idle H100 is currently running for this project.
 
 | Setting | Actual |
 | --- | --- |

@@ -1,0 +1,940 @@
+{
+  "schema_version": 1,
+  "status": "model_output",
+  "title": "artemis houston",
+  "model": "nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B",
+  "audio_file": "artemis_houston.wav",
+  "audio_sha256": "9220316c529d7eb0ed074aaa92d8bac8db0f30e4377cdc3d7acfcba63570cb8f",
+  "audio_duration_seconds": 21.9740625,
+  "prompt": "Transcribe this audio with punctuation and capitalization. Include all spoken words and verbal fillers. Write numbers in their standard written form. Put speaker tags <spk:0> <spk:1> <spk:2> <spk:3> on the transcription.",
+  "text": "<spk:0> Houston, we have you loud and clear on vehicle day, or how's us <spk:1> We have you the same, we'll meet you over in post landing <spk:0> perfect <spk:2> Once we're <spk:0> communications <spk:2> wheels up. <spk:0> established. A journey. We are stable. One for green, crew members. <spk:1> Houston. Copies all.",
+  "words": [
+    {
+      "word": "Houston,",
+      "start": 0.46,
+      "end": 0.799,
+      "speaker": "0"
+    },
+    {
+      "word": "we",
+      "start": 0.799,
+      "end": 0.959,
+      "speaker": "0"
+    },
+    {
+      "word": "have",
+      "start": 0.959,
+      "end": 1.039,
+      "speaker": "0"
+    },
+    {
+      "word": "you",
+      "start": 1.039,
+      "end": 1.119,
+      "speaker": "0"
+    },
+    {
+      "word": "loud",
+      "start": 1.119,
+      "end": 1.318,
+      "speaker": "0"
+    },
+    {
+      "word": "and",
+      "start": 1.318,
+      "end": 1.358,
+      "speaker": "0"
+    },
+    {
+      "word": "clear",
+      "start": 1.358,
+      "end": 1.598,
+      "speaker": "0"
+    },
+    {
+      "word": "on",
+      "start": 1.598,
+      "end": 1.678,
+      "speaker": "0"
+    },
+    {
+      "word": "vehicle",
+      "start": 1.678,
+      "end": 1.838,
+      "speaker": "0"
+    },
+    {
+      "word": "day,",
+      "start": 1.838,
+      "end": 2.078,
+      "speaker": "0"
+    },
+    {
+      "word": "or",
+      "start": 2.078,
+      "end": 2.317,
+      "speaker": "0"
+    },
+    {
+      "word": "how's",
+      "start": 2.317,
+      "end": 2.477,
+      "speaker": "0"
+    },
+    {
+      "word": "us",
+      "start": 2.477,
+      "end": 2.8,
+      "speaker": "0"
+    },
+    {
+      "word": "We",
+      "start": 4.43,
+      "end": 4.714,
+      "speaker": "1"
+    },
+    {
+      "word": "have",
+      "start": 4.714,
+      "end": 4.794,
+      "speaker": "1"
+    },
+    {
+      "word": "you",
+      "start": 4.794,
+      "end": 5.034,
+      "speaker": "1"
+    },
+    {
+      "word": "the",
+      "start": 5.034,
+      "end": 5.114,
+      "speaker": "1"
+    },
+    {
+      "word": "same,",
+      "start": 5.114,
+      "end": 5.354,
+      "speaker": "1"
+    },
+    {
+      "word": "we'll",
+      "start": 5.354,
+      "end": 5.513,
+      "speaker": "1"
+    },
+    {
+      "word": "meet",
+      "start": 5.513,
+      "end": 5.673,
+      "speaker": "1"
+    },
+    {
+      "word": "you",
+      "start": 5.673,
+      "end": 5.833,
+      "speaker": "1"
+    },
+    {
+      "word": "over",
+      "start": 5.833,
+      "end": 6.073,
+      "speaker": "1"
+    },
+    {
+      "word": "in",
+      "start": 6.073,
+      "end": 6.233,
+      "speaker": "1"
+    },
+    {
+      "word": "post",
+      "start": 6.233,
+      "end": 6.392,
+      "speaker": "1"
+    },
+    {
+      "word": "landing",
+      "start": 6.392,
+      "end": 6.71,
+      "speaker": "1"
+    },
+    {
+      "word": "Once",
+      "start": 10.44,
+      "end": 10.867,
+      "speaker": "2"
+    },
+    {
+      "word": "perfect",
+      "start": 10.468,
+      "end": 10.52,
+      "speaker": "0"
+    },
+    {
+      "word": "communications",
+      "start": 10.52,
+      "end": 11.479,
+      "speaker": "0"
+    },
+    {
+      "word": "we're",
+      "start": 10.867,
+      "end": 11.746,
+      "speaker": "2"
+    },
+    {
+      "word": "established.",
+      "start": 11.586,
+      "end": 12.305,
+      "speaker": "0"
+    },
+    {
+      "word": "wheels",
+      "start": 11.746,
+      "end": 11.986,
+      "speaker": "2"
+    },
+    {
+      "word": "up.",
+      "start": 11.986,
+      "end": 12.18,
+      "speaker": "2"
+    },
+    {
+      "word": "A",
+      "start": 12.305,
+      "end": 12.785,
+      "speaker": "0"
+    },
+    {
+      "word": "journey.",
+      "start": 12.785,
+      "end": 13.504,
+      "speaker": "0"
+    },
+    {
+      "word": "We",
+      "start": 13.504,
+      "end": 13.584,
+      "speaker": "0"
+    },
+    {
+      "word": "are",
+      "start": 13.584,
+      "end": 13.824,
+      "speaker": "0"
+    },
+    {
+      "word": "stable.",
+      "start": 13.824,
+      "end": 14.223,
+      "speaker": "0"
+    },
+    {
+      "word": "One",
+      "start": 14.223,
+      "end": 15.022,
+      "speaker": "0"
+    },
+    {
+      "word": "for",
+      "start": 15.022,
+      "end": 15.662,
+      "speaker": "0"
+    },
+    {
+      "word": "green,",
+      "start": 15.662,
+      "end": 16.461,
+      "speaker": "0"
+    },
+    {
+      "word": "crew",
+      "start": 16.461,
+      "end": 16.78,
+      "speaker": "0"
+    },
+    {
+      "word": "members.",
+      "start": 16.78,
+      "end": 17.44,
+      "speaker": "0"
+    },
+    {
+      "word": "Houston.",
+      "start": 19.95,
+      "end": 20.376,
+      "speaker": "1"
+    },
+    {
+      "word": "Copies",
+      "start": 20.376,
+      "end": 20.696,
+      "speaker": "1"
+    },
+    {
+      "word": "all.",
+      "start": 20.696,
+      "end": 20.94,
+      "speaker": "1"
+    }
+  ],
+  "alignment": {
+    "words": [
+      {
+        "word": "Houston,",
+        "start": 0.46,
+        "end": 0.799,
+        "speaker": "0"
+      },
+      {
+        "word": "we",
+        "start": 0.799,
+        "end": 0.959,
+        "speaker": "0"
+      },
+      {
+        "word": "have",
+        "start": 0.959,
+        "end": 1.039,
+        "speaker": "0"
+      },
+      {
+        "word": "you",
+        "start": 1.039,
+        "end": 1.119,
+        "speaker": "0"
+      },
+      {
+        "word": "loud",
+        "start": 1.119,
+        "end": 1.318,
+        "speaker": "0"
+      },
+      {
+        "word": "and",
+        "start": 1.318,
+        "end": 1.358,
+        "speaker": "0"
+      },
+      {
+        "word": "clear",
+        "start": 1.358,
+        "end": 1.598,
+        "speaker": "0"
+      },
+      {
+        "word": "on",
+        "start": 1.598,
+        "end": 1.678,
+        "speaker": "0"
+      },
+      {
+        "word": "vehicle",
+        "start": 1.678,
+        "end": 1.838,
+        "speaker": "0"
+      },
+      {
+        "word": "day,",
+        "start": 1.838,
+        "end": 2.078,
+        "speaker": "0"
+      },
+      {
+        "word": "or",
+        "start": 2.078,
+        "end": 2.317,
+        "speaker": "0"
+      },
+      {
+        "word": "how's",
+        "start": 2.317,
+        "end": 2.477,
+        "speaker": "0"
+      },
+      {
+        "word": "us",
+        "start": 2.477,
+        "end": 2.8,
+        "speaker": "0"
+      },
+      {
+        "word": "We",
+        "start": 4.43,
+        "end": 4.714,
+        "speaker": "1"
+      },
+      {
+        "word": "have",
+        "start": 4.714,
+        "end": 4.794,
+        "speaker": "1"
+      },
+      {
+        "word": "you",
+        "start": 4.794,
+        "end": 5.034,
+        "speaker": "1"
+      },
+      {
+        "word": "the",
+        "start": 5.034,
+        "end": 5.114,
+        "speaker": "1"
+      },
+      {
+        "word": "same,",
+        "start": 5.114,
+        "end": 5.354,
+        "speaker": "1"
+      },
+      {
+        "word": "we'll",
+        "start": 5.354,
+        "end": 5.513,
+        "speaker": "1"
+      },
+      {
+        "word": "meet",
+        "start": 5.513,
+        "end": 5.673,
+        "speaker": "1"
+      },
+      {
+        "word": "you",
+        "start": 5.673,
+        "end": 5.833,
+        "speaker": "1"
+      },
+      {
+        "word": "over",
+        "start": 5.833,
+        "end": 6.073,
+        "speaker": "1"
+      },
+      {
+        "word": "in",
+        "start": 6.073,
+        "end": 6.233,
+        "speaker": "1"
+      },
+      {
+        "word": "post",
+        "start": 6.233,
+        "end": 6.392,
+        "speaker": "1"
+      },
+      {
+        "word": "landing",
+        "start": 6.392,
+        "end": 6.71,
+        "speaker": "1"
+      },
+      {
+        "word": "Once",
+        "start": 10.44,
+        "end": 10.867,
+        "speaker": "2"
+      },
+      {
+        "word": "perfect",
+        "start": 10.468,
+        "end": 10.52,
+        "speaker": "0"
+      },
+      {
+        "word": "communications",
+        "start": 10.52,
+        "end": 11.479,
+        "speaker": "0"
+      },
+      {
+        "word": "we're",
+        "start": 10.867,
+        "end": 11.746,
+        "speaker": "2"
+      },
+      {
+        "word": "established.",
+        "start": 11.586,
+        "end": 12.305,
+        "speaker": "0"
+      },
+      {
+        "word": "wheels",
+        "start": 11.746,
+        "end": 11.986,
+        "speaker": "2"
+      },
+      {
+        "word": "up.",
+        "start": 11.986,
+        "end": 12.18,
+        "speaker": "2"
+      },
+      {
+        "word": "A",
+        "start": 12.305,
+        "end": 12.785,
+        "speaker": "0"
+      },
+      {
+        "word": "journey.",
+        "start": 12.785,
+        "end": 13.504,
+        "speaker": "0"
+      },
+      {
+        "word": "We",
+        "start": 13.504,
+        "end": 13.584,
+        "speaker": "0"
+      },
+      {
+        "word": "are",
+        "start": 13.584,
+        "end": 13.824,
+        "speaker": "0"
+      },
+      {
+        "word": "stable.",
+        "start": 13.824,
+        "end": 14.223,
+        "speaker": "0"
+      },
+      {
+        "word": "One",
+        "start": 14.223,
+        "end": 15.022,
+        "speaker": "0"
+      },
+      {
+        "word": "for",
+        "start": 15.022,
+        "end": 15.662,
+        "speaker": "0"
+      },
+      {
+        "word": "green,",
+        "start": 15.662,
+        "end": 16.461,
+        "speaker": "0"
+      },
+      {
+        "word": "crew",
+        "start": 16.461,
+        "end": 16.78,
+        "speaker": "0"
+      },
+      {
+        "word": "members.",
+        "start": 16.78,
+        "end": 17.44,
+        "speaker": "0"
+      },
+      {
+        "word": "Houston.",
+        "start": 19.95,
+        "end": 20.376,
+        "speaker": "1"
+      },
+      {
+        "word": "Copies",
+        "start": 20.376,
+        "end": 20.696,
+        "speaker": "1"
+      },
+      {
+        "word": "all.",
+        "start": 20.696,
+        "end": 20.94,
+        "speaker": "1"
+      }
+    ],
+    "diarization": [
+      {
+        "speaker": 0,
+        "start": 0.46,
+        "end": 2.8
+      },
+      {
+        "speaker": 1,
+        "start": 4.43,
+        "end": 6.71
+      },
+      {
+        "speaker": 2,
+        "start": 10.44,
+        "end": 12.18
+      },
+      {
+        "speaker": 0,
+        "start": 10.52,
+        "end": 17.44
+      },
+      {
+        "speaker": 1,
+        "start": 19.95,
+        "end": 20.94
+      }
+    ],
+    "speaker_tag_to_diarization_speaker": {
+      "0": 0,
+      "1": 1,
+      "2": 2
+    },
+    "error": null
+  },
+  "raw_response": {
+    "id": "chatcmpl-ctc-200ddf1d9a9d42908dbf9e890d33018b",
+    "object": "chat.completion",
+    "created": 1793263103,
+    "model": "nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "<spk:0> Houston, we have you loud and clear on vehicle day, or how's us <spk:1> We have you the same, we'll meet you over in post landing <spk:0> perfect <spk:2> Once we're <spk:0> communications <spk:2> wheels up. <spk:0> established. A journey. We are stable. One for green, crew members. <spk:1> Houston. Copies all.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.32.0-ccb6983e",
+    "usage": {
+      "prompt_tokens": 335,
+      "total_tokens": 411,
+      "completion_tokens": 76,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "prompt_text": null,
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null,
+    "ctc_timestamps": {
+      "words": [
+        {
+          "word": "Houston,",
+          "start": 0.46,
+          "end": 0.799,
+          "speaker": "0"
+        },
+        {
+          "word": "we",
+          "start": 0.799,
+          "end": 0.959,
+          "speaker": "0"
+        },
+        {
+          "word": "have",
+          "start": 0.959,
+          "end": 1.039,
+          "speaker": "0"
+        },
+        {
+          "word": "you",
+          "start": 1.039,
+          "end": 1.119,
+          "speaker": "0"
+        },
+        {
+          "word": "loud",
+          "start": 1.119,
+          "end": 1.318,
+          "speaker": "0"
+        },
+        {
+          "word": "and",
+          "start": 1.318,
+          "end": 1.358,
+          "speaker": "0"
+        },
+        {
+          "word": "clear",
+          "start": 1.358,
+          "end": 1.598,
+          "speaker": "0"
+        },
+        {
+          "word": "on",
+          "start": 1.598,
+          "end": 1.678,
+          "speaker": "0"
+        },
+        {
+          "word": "vehicle",
+          "start": 1.678,
+          "end": 1.838,
+          "speaker": "0"
+        },
+        {
+          "word": "day,",
+          "start": 1.838,
+          "end": 2.078,
+          "speaker": "0"
+        },
+        {
+          "word": "or",
+          "start": 2.078,
+          "end": 2.317,
+          "speaker": "0"
+        },
+        {
+          "word": "how's",
+          "start": 2.317,
+          "end": 2.477,
+          "speaker": "0"
+        },
+        {
+          "word": "us",
+          "start": 2.477,
+          "end": 2.8,
+          "speaker": "0"
+        },
+        {
+          "word": "We",
+          "start": 4.43,
+          "end": 4.714,
+          "speaker": "1"
+        },
+        {
+          "word": "have",
+          "start": 4.714,
+          "end": 4.794,
+          "speaker": "1"
+        },
+        {
+          "word": "you",
+          "start": 4.794,
+          "end": 5.034,
+          "speaker": "1"
+        },
+        {
+          "word": "the",
+          "start": 5.034,
+          "end": 5.114,
+          "speaker": "1"
+        },
+        {
+          "word": "same,",
+          "start": 5.114,
+          "end": 5.354,
+          "speaker": "1"
+        },
+        {
+          "word": "we'll",
+          "start": 5.354,
+          "end": 5.513,
+          "speaker": "1"
+        },
+        {
+          "word": "meet",
+          "start": 5.513,
+          "end": 5.673,
+          "speaker": "1"
+        },
+        {
+          "word": "you",
+          "start": 5.673,
+          "end": 5.833,
+          "speaker": "1"
+        },
+        {
+          "word": "over",
+          "start": 5.833,
+          "end": 6.073,
+          "speaker": "1"
+        },
+        {
+          "word": "in",
+          "start": 6.073,
+          "end": 6.233,
+          "speaker": "1"
+        },
+        {
+          "word": "post",
+          "start": 6.233,
+          "end": 6.392,
+          "speaker": "1"
+        },
+        {
+          "word": "landing",
+          "start": 6.392,
+          "end": 6.71,
+          "speaker": "1"
+        },
+        {
+          "word": "Once",
+          "start": 10.44,
+          "end": 10.867,
+          "speaker": "2"
+        },
+        {
+          "word": "perfect",
+          "start": 10.468,
+          "end": 10.52,
+          "speaker": "0"
+        },
+        {
+          "word": "communications",
+          "start": 10.52,
+          "end": 11.479,
+          "speaker": "0"
+        },
+        {
+          "word": "we're",
+          "start": 10.867,
+          "end": 11.746,
+          "speaker": "2"
+        },
+        {
+          "word": "established.",
+          "start": 11.586,
+          "end": 12.305,
+          "speaker": "0"
+        },
+        {
+          "word": "wheels",
+          "start": 11.746,
+          "end": 11.986,
+          "speaker": "2"
+        },
+        {
+          "word": "up.",
+          "start": 11.986,
+          "end": 12.18,
+          "speaker": "2"
+        },
+        {
+          "word": "A",
+          "start": 12.305,
+          "end": 12.785,
+          "speaker": "0"
+        },
+        {
+          "word": "journey.",
+          "start": 12.785,
+          "end": 13.504,
+          "speaker": "0"
+        },
+        {
+          "word": "We",
+          "start": 13.504,
+          "end": 13.584,
+          "speaker": "0"
+        },
+        {
+          "word": "are",
+          "start": 13.584,
+          "end": 13.824,
+          "speaker": "0"
+        },
+        {
+          "word": "stable.",
+          "start": 13.824,
+          "end": 14.223,
+          "speaker": "0"
+        },
+        {
+          "word": "One",
+          "start": 14.223,
+          "end": 15.022,
+          "speaker": "0"
+        },
+        {
+          "word": "for",
+          "start": 15.022,
+          "end": 15.662,
+          "speaker": "0"
+        },
+        {
+          "word": "green,",
+          "start": 15.662,
+          "end": 16.461,
+          "speaker": "0"
+        },
+        {
+          "word": "crew",
+          "start": 16.461,
+          "end": 16.78,
+          "speaker": "0"
+        },
+        {
+          "word": "members.",
+          "start": 16.78,
+          "end": 17.44,
+          "speaker": "0"
+        },
+        {
+          "word": "Houston.",
+          "start": 19.95,
+          "end": 20.376,
+          "speaker": "1"
+        },
+        {
+          "word": "Copies",
+          "start": 20.376,
+          "end": 20.696,
+          "speaker": "1"
+        },
+        {
+          "word": "all.",
+          "start": 20.696,
+          "end": 20.94,
+          "speaker": "1"
+        }
+      ],
+      "diarization": [
+        {
+          "speaker": 0,
+          "start": 0.46,
+          "end": 2.8
+        },
+        {
+          "speaker": 1,
+          "start": 4.43,
+          "end": 6.71
+        },
+        {
+          "speaker": 2,
+          "start": 10.44,
+          "end": 12.18
+        },
+        {
+          "speaker": 0,
+          "start": 10.52,
+          "end": 17.44
+        },
+        {
+          "speaker": 1,
+          "start": 19.95,
+          "end": 20.94
+        }
+      ],
+      "speaker_tag_to_diarization_speaker": {
+        "0": 0,
+        "1": 1,
+        "2": 2
+      },
+      "error": null
+    }
+  },
+  "request_seconds": 0.498
+}

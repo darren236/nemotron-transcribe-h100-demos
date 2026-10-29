@@ -1,14 +1,14 @@
 # Nemotron 3.5 Transcribe on H100
 
-A reproducible, single H100 demo of [NVIDIA Nemotron 3.5 Transcribe](https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B). The source is an original 34.24-second, two-speaker synthetic conversation. On 29 October 2026, the model returned 90 CTC-aligned words with two alternating speaker tags and no alignment error. The vLLM request took 2.666 seconds after server warmup. This one recording is a demonstration, not an accuracy or latency benchmark.
+A reproducible set of three real H100 demos of [NVIDIA Nemotron 3.5 Transcribe](https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B): an original two-speaker conversation, a JFK speech clip, and NASA Artemis mission radio. Each saved JSON contains the raw vLLM response, CTC word timings, model-assigned speaker tags, and the SHA-256 of its exact input WAV. The [gallery manifest](runs/gallery_manifest.json) records model revision, provenance and run measurements. These are examples, not accuracy or latency benchmarks.
 
 The demo takes cues from NVIDIA's [podcast](https://nvidia-nemotron-transcribe.hf.space/podcast.html) and [subtitle](https://nvidia-nemotron-transcribe.hf.space/movie.html) examples: follow words during playback, find a phrase, and export SRT captions.
 
 ## Watch and use
 
-- [Finished 60-second video](video/out/nemotron-transcribe-demo.mp4) (committed with the demo).
-- [Real model result](runs/demo_conversation.json), [SRT](runs/demo_conversation.srt), and [provenance manifest](runs/manifest.json).
-- [Demo audio](assets/demo_conversation.wav) and [source script](assets/demo_conversation_script.json).
+- [60-second project overview](video/out/nemotron-transcribe-demo.mp4).
+- Synchronized caption clips: [two-speaker conversation](video/out/conversation-caption.mp4), [JFK speech](video/out/jfk-caption.mp4), [Artemis radio](video/out/artemis-caption.mp4).
+- [Three-demo guide](demos/README.md) with original audio sources, reproduction commands, raw outputs, SRT captions and provenance.
 
 From this directory, start the static viewer:
 
@@ -16,11 +16,11 @@ From this directory, start the static viewer:
 python3 -m http.server 8765 --bind 127.0.0.1
 ```
 
-Open `http://127.0.0.1:8765/`. It loads the real result and its matching WAV automatically, verifies the WAV SHA-256, and enables word-following playback, phrase search, and SRT download. You can also select another result JSON and matching WAV manually. File selection stays in the browser session; the static viewer makes no API requests.
+Open `http://127.0.0.1:8765/`. Select a recording to load its real model result and matching WAV. The viewer verifies the WAV SHA-256 before word-following playback, phrase search, and SRT download. You can also select another result JSON and matching WAV manually. The gallery replays saved inference; it does not start the H100 or make a new model request on each click.
 
 ## Repeat the H100 run
 
-Follow [docs/H100_RUNBOOK.md](docs/H100_RUNBOOK.md) for Brev access, exact install/download/server/inference commands, and troubleshooting. [docs/RUN_LOG_2026-10-29.md](docs/RUN_LOG_2026-10-29.md) records the observed run and checks. [BREV_INSTANCE.md](BREV_INSTANCE.md) records the instance choice and final state. The Brev instance `nemotron-transcribe-v1` in `nvaitc_workshop` was stopped after the result was saved.
+Follow [docs/H100_RUNBOOK.md](docs/H100_RUNBOOK.md) for Brev access, exact install/download/server/inference commands, and troubleshooting. [docs/RUN_LOG_2026-10-29.md](docs/RUN_LOG_2026-10-29.md) records the observed runs and checks. [BREV_INSTANCE.md](BREV_INSTANCE.md) records the instance choice and final state. The Brev instance `nemotron-transcribe-v1` in `nvaitc_workshop` was stopped after all results were saved.
 
 The inference endpoint binds only to `127.0.0.1:8000` on the H100. It has no public authentication layer, so keep it on loopback and use SSH for remote access.
 

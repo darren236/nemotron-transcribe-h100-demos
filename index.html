@@ -15,9 +15,15 @@
 
     <main>
       <section class="intro">
-        <div class="eyebrow"><span class="pulse"></span> DEMO WORKSPACE <span class="eyebrow-line"></span> 01 / 01</div>
+        <div class="eyebrow"><span class="pulse"></span> DEMO WORKSPACE <span class="eyebrow-line"></span> 03 RECORDINGS</div>
         <h1>Hear the moment.<br><em>Find the words.</em></h1>
         <p>A recording becomes a transcript you can follow, search, and turn into subtitles.</p>
+      </section>
+
+      <section class="demo-chooser" aria-label="Choose a Nemotron demo">
+        <div class="demo-chooser-head"><span class="eyebrow muted">CHOOSE A RECORDING</span><span>Each transcript was produced by Nemotron on the H100</span></div>
+        <div id="demo-options" class="demo-options"></div>
+        <div class="demo-actions"><a id="demo-video" href="#" target="_blank" rel="noopener noreferrer">Watch synchronized clip ↗</a><a id="demo-result" href="#" target="_blank" rel="noopener noreferrer">Inspect model JSON ↗</a></div>
       </section>
 
       <section class="desk" aria-label="Transcription demo">
@@ -51,6 +57,7 @@
             <div class="rule"></div>
             <div class="panel-title">SOURCE</div>
             <p id="source-note" class="source-note">Illustrative transcript for layout preview. No model inference has run.</p>
+            <a id="source-link" class="source-link" href="#" target="_blank" rel="noopener noreferrer" hidden>View audio source ↗</a>
             <div class="rule"></div>
             <div class="panel-title">MODEL</div>
             <p id="model-name" class="model-name">Illustrative layout preview</p>
@@ -67,6 +74,6 @@
       <footer>BUILT FOR A SINGLE H100 DEMO <span>·</span> <span id="footer-status">MODEL OUTPUT WILL BE LABELLED AFTER INFERENCE</span></footer>
     </main>
   </div>
-  <script src="viewer.js?v=20261029-real-demo"></script>
+  <script src="viewer.js?v=20261029-multi-demo"></script>
 </body>
 </html>

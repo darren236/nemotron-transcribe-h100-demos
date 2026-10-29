@@ -5,6 +5,8 @@ let audioUrl = null;
 let selectedAudio = null;
 let selectedAudioHash = null;
 let matchedAudio = false;
+let currentDemo = null;
+let loadToken = 0;
 
 function clock(seconds) {
   const value = Math.max(0, Math.floor(Number(seconds) || 0));
@@ -102,7 +104,7 @@ function updatePlayback() {
   if (!data) return;
   const end = audio.duration || data.audio_duration_seconds || data.words.at(-1).end;
   const now = matchedAudio ? audio.currentTime : 0;
-  $("time").textContent = `${clock(now)} / ${clock(end)}`;
+  $("time").textContent = `${clock(now)} / ${clock(end + 0.5)}`;
   $("seek").max = String(end); $("seek").value = String(now);
   const fraction = end ? now / end : 0;
   [...$("waveform").children].forEach((bar, i) => bar.classList.toggle("passed", i / 100 <= fraction));
@@ -119,13 +121,16 @@ function updateStatus() {
   const badge = $("source-badge");
   badge.textContent = real ? "MODEL OUTPUT" : "ILLUSTRATIVE SAMPLE";
   badge.className = "badge " + (real ? "real" : "sample");
-  $("recording-title").textContent = data.title || "Untitled recording";
+  $("recording-title").textContent = currentDemo?.title || data.title || "Untitled recording";
   $("word-count").textContent = String(data.words.length);
   $("speaker-count").textContent = String(new Set(data.words.map((item) => item.speaker || "spk:0")).size);
-  $("length").textContent = clock(data.audio_duration_seconds || data.words.at(-1).end);
+  $("length").textContent = clock((data.audio_duration_seconds || data.words.at(-1).end) + 0.5);
   $("model-name").textContent = data.model || "Unknown";
-  $("source-note").textContent = real ? `Real model output${data.request_seconds ? ` · ${data.request_seconds}s request time` : ""}. Verify names and speaker turns against the recording.` : "Illustrative transcript for layout preview. No model inference has run.";
-  $("footer-status").textContent = real ? "REAL MODEL OUTPUT · RECORDING SYNTHESIZED LOCALLY" : "MODEL OUTPUT WILL BE LABELLED AFTER INFERENCE";
+  $("source-note").textContent = real ? `Real model output${data.request_seconds ? ` · ${data.request_seconds}s request time` : ""}. ${currentDemo?.description || "Review names and speaker turns against the recording."}` : "Illustrative transcript for layout preview. No model inference has run.";
+  const sourceLink = $("source-link");
+  sourceLink.hidden = !currentDemo?.source_url;
+  if (currentDemo?.source_url) sourceLink.href = currentDemo.source_url;
+  $("footer-status").textContent = real ? `REAL MODEL OUTPUT · ${currentDemo?.source || "USER-SUPPLIED RECORDING"}`.toUpperCase() : "MODEL OUTPUT WILL BE LABELLED AFTER INFERENCE";
   matchedAudio = Boolean(real && selectedAudio && selectedAudio.name === data.audio_file && selectedAudioHash === data.audio_sha256);
   $("play").disabled = !matchedAudio;
   $("seek").disabled = !matchedAudio;
@@ -156,7 +161,7 @@ function makeSrt(words) {
 
 $("json-file").addEventListener("change", async (event) => {
   const file = event.target.files?.[0]; if (!file) return;
-  try { data = validateResult(JSON.parse(await file.text())); audio.pause(); renderTranscript(); updateStatus(); }
+  try { data = validateResult(JSON.parse(await file.text())); loadToken++; audio.pause(); currentDemo = null; updateDemoActive(); renderTranscript(); updateStatus(); }
   catch (error) { alert(`Could not load result: ${error.message}`); }
 });
 $("audio-file").addEventListener("change", async (event) => {
@@ -184,25 +189,66 @@ audio.addEventListener("timeupdate", updatePlayback);
 audio.addEventListener("loadedmetadata", updatePlayback);
 audio.addEventListener("play", updatePlayback);
 audio.addEventListener("pause", updatePlayback);
-async function loadBundledResult() {
-  let response = await fetch("runs/demo_conversation.json");
-  if (!response.ok) response = await fetch("sample.json");
-  if (!response.ok) throw Error("No bundled transcript available");
-  data = validateResult(await response.json());
-  renderTranscript(); updateStatus();
-  if (data.status !== "model_output" || data.audio_file !== "demo_conversation.wav") return;
-  const audioResponse = await fetch("assets/demo_conversation.wav");
-  if (!audioResponse.ok) return;
-  const blob = await audioResponse.blob();
-  const file = new File([blob], "demo_conversation.wav", {type:"audio/wav"});
+function updateDemoActive() {
+  for (const button of document.querySelectorAll(".demo-option")) {
+    const selected = button.dataset.demo === currentDemo?.id;
+    button.classList.toggle("active", selected);
+    button.setAttribute("aria-pressed", String(selected));
+  }
+}
+
+async function selectDemo(entry) {
+  const token = ++loadToken;
+  audio.pause();
+  matchedAudio = false;
+  $("play").disabled = true;
+  $("seek").disabled = true;
+  $("notice").textContent = `Loading ${entry.title} and checking the model result…`;
+  const [resultResponse, audioResponse] = await Promise.all([fetch(entry.result), fetch(entry.audio)]);
+  if (!resultResponse.ok || !audioResponse.ok) throw Error(`Missing files for ${entry.title}`);
+  const candidate = validateResult(await resultResponse.json());
+  if (candidate.status !== "model_output") throw Error(`${entry.title} is not a real model result`);
+  const audioName = entry.audio.split("/").at(-1);
+  if (candidate.audio_file !== audioName) throw Error(`Audio filename mismatch for ${entry.title}`);
+  const file = new File([await audioResponse.blob()], audioName, {type:"audio/wav"});
   const digest = await crypto.subtle.digest("SHA-256", await file.arrayBuffer());
   const hash = [...new Uint8Array(digest)].map((x) => x.toString(16).padStart(2, "0")).join("");
-  if (hash !== data.audio_sha256) throw Error("Bundled audio does not match the model result");
+  if (hash !== candidate.audio_sha256) throw Error(`${entry.title} audio does not match the model result`);
+  if (token !== loadToken) return;
+  data = candidate;
+  currentDemo = entry;
+  $("demo-video").href = entry.video;
+  $("demo-result").href = entry.result;
   selectedAudio = file; selectedAudioHash = hash;
   if (audioUrl) URL.revokeObjectURL(audioUrl);
   audioUrl = URL.createObjectURL(file); audio.src = audioUrl;
-  updateStatus();
+  $("search").value = "";
+  renderTranscript(); updateStatus(); updateDemoActive();
+  const url = new URL(location.href);
+  url.searchParams.set("demo", entry.id);
+  history.replaceState(null, "", url);
+}
+
+async function loadCatalog() {
+  const response = await fetch("demos/catalog.json");
+  if (!response.ok) throw Error("Demo catalog is unavailable");
+  const catalog = await response.json();
+  if (!Array.isArray(catalog) || !catalog.length) throw Error("Demo catalog is empty");
+  const container = $("demo-options");
+  for (const entry of catalog) {
+    const button = document.createElement("button");
+    button.type = "button"; button.className = "demo-option"; button.dataset.demo = entry.id;
+    const number = document.createElement("span"); number.className = "demo-number"; number.textContent = entry.number;
+    const label = document.createElement("span"); label.className = "demo-label"; label.textContent = entry.label;
+    const title = document.createElement("strong"); title.textContent = entry.title;
+    const description = document.createElement("span"); description.className = "demo-description"; description.textContent = entry.description;
+    button.append(number, label, title, description);
+    button.addEventListener("click", () => selectDemo(entry).catch((error) => { $("notice").textContent = `Could not load demo: ${error.message}`; }));
+    container.append(button);
+  }
+  const requested = new URL(location.href).searchParams.get("demo");
+  await selectDemo(catalog.find((entry) => entry.id === requested) || catalog[0]);
 }
 
 drawWave();
-loadBundledResult().catch((error) => { $("notice").textContent = `Could not load bundled demo: ${error.message}`; });
+loadCatalog().catch((error) => { $("notice").textContent = `Could not load demos: ${error.message}`; });

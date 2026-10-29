@@ -6,6 +6,8 @@ Visual theme: NVIDIA Green `#76B900`, charcoal and white, with crisp green rules
 
 The delivered video is driven by `result.props.json`, generated from the real H100 response. The composition still supports a clearly labelled placeholder for development when real props are omitted. Scene narration was synthesized locally with Kokoro Sarah and is bundled under `public/narration/`.
 
+`NemotronCaptionClip` is a second composition for short source-led demos. It plays the exact model-input WAV and highlights the model's CTC-aligned words at their returned times. `scripts/build_gallery.py` validates all three results, copies matching WAVs into `public/`, and writes `clip-props/{conversation,jfk,artemis}.json`. Its duration follows each input audio plus 0.4 seconds.
+
 ## Install
 
 ```bash
@@ -26,6 +28,11 @@ npm run render -- --props=./result.props.json
 
 # check one frame
 npx remotion still src/index.ts NemotronTranscribeDemo out/frame.png --frame=375 --props=./result.props.json
+
+# short synchronized clips from three real model outputs
+npx remotion render src/index.ts NemotronCaptionClip out/conversation-caption.mp4 --props=./clip-props/conversation.json
+npx remotion render src/index.ts NemotronCaptionClip out/jfk-caption.mp4 --props=./clip-props/jfk.json
+npx remotion render src/index.ts NemotronCaptionClip out/artemis-caption.mp4 --props=./clip-props/artemis.json
 ```
 
 ## Props shape
@@ -96,4 +103,4 @@ src/scenes/           the six scenes
 
 Claude Code (Sonnet) authored the Remotion scene scaffold using `claude -p --model sonnet --permission-mode acceptEdits --allowedTools Read,Edit,Write` against a local project brief. No Brev credentials or unrelated private material were sent. Codex wired in `result.props.json`, narration, and the verified audio, then type-checked and rendered locally.
 
-The final `out/nemotron-transcribe-demo.mp4` was checked as 60.011 seconds, H.264 1920×1080 at 30 fps with AAC audio. Stills from the final export were inspected, including the corrected model scene at 12.5 seconds. The final MP4 is committed; intermediate stills and `node_modules/` are ignored. Source, props, audio and lockfile are kept for rebuilding.
+The final `out/nemotron-transcribe-demo.mp4` was checked as 60.011 seconds, H.264 1920×1080 at 30 fps with AAC audio. Stills from the final export were inspected, including the corrected model scene at 12.5 seconds. The three caption clips use the same video/audio codecs and display the unedited model response on their exact input audio. Final MP4s are committed; intermediate stills and `node_modules/` are ignored. Source, props, audio and lockfile are kept for rebuilding.

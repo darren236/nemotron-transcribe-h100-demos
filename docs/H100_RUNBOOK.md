@@ -100,6 +100,24 @@ npm run render -- --props=./result.props.json
 
 The first real request took 2.666 seconds for the 34.24-second input after the model had loaded and warmed up. It returned 90 aligned words, two speaker tags and `alignment.error=null`. These numbers describe this one synthetic recording and warm server request.
 
+## Run additional examples after a restart
+
+The checkpoint and virtual environment persist on the stopped Brev disk. Restart the same instance, launch `scripts/serve_h100.sh` from the existing environment, and wait for `/v1/models` on loopback. The second boot spent roughly nine minutes paging the 62.86 GiB checkpoint from disk, followed by kernel warmup. This is startup time, separate from per-request inference. The [gallery guide](../demos/README.md) records the source downloads, conversions, transfer, exact two inference commands and copied outputs.
+
+For the 29 October restart, the server was launched with:
+
+```bash
+ssh nemotron-transcribe-v1 'bash -s' <<'REMOTE'
+source /home/ubuntu/nemo-speech/.venv/bin/activate
+nohup bash /home/ubuntu/nemotron-demo/serve_h100.sh \
+  /home/ubuntu/nemo-speech/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B \
+  > /home/ubuntu/nemotron-demo/server_second_run.log 2>&1 < /dev/null &
+echo "SERVER_PID:$!"
+REMOTE
+```
+
+Keep the H100 running only through inference and local output verification. Render Remotion videos on the workstation after shutdown.
+
 ## Troubleshooting observed
 
 1. **`python3 -m venv` → `ensurepip is not available`:** The Brev Ubuntu image lacked `python3.12-venv`. Use `uv` as above or install Ubuntu's matching venv package. The failed partial `~/nemotron-bootstrap` directory was not used further.
@@ -113,6 +131,8 @@ The first real request took 2.666 seconds for the 34.24-second input after the m
 3. **`/v1/models` refuses connections during startup:** Watch the vLLM log; model loading, torch compilation and warmup take time. A refused connection alone is not evidence of failure. Look for `ERROR`, `fatal error`, or `Application startup complete` before retrying.
 4. **Brev lists `RUNNING` but initial SSH waits:** The CLI retried and connected after about 10–20 seconds in this run. Check `brev ls --all`, then `brev refresh` if the SSH configuration remains stale, as recommended by the [Brev CLI docs](https://docs.nvidia.com/brev/cli/connectivity).
 5. **A Remotion still lost the model title late in scene 2:** The title container remained in the DOM with opacity 1, but Chromium omitted its text at frame 375. A near-transparent container background (`#FFFFFF01`) forced consistent compositing; stills at frames 330, 360 and 375 were checked before the final render. This affected only the video, not inference.
+6. **Brev `copy` rejected a starting instance while direct SSH worked:** On the second boot, `brev copy` returned `instance ... is not running (status: STARTING)` although SSH, `nvidia-smi` and the saved checkpoint were available. `scp -o BatchMode=yes files... nemotron-transcribe-v1:/home/ubuntu/nemotron-demo/` used the CLI-created SSH configuration successfully. Later `brev ls --all` showed `RUNNING`.
+7. **`brev start` spinner kept saying `instance is starting`:** Check `brev ls --all` and SSH separately. The CLI says it is safe to interrupt the spinner; we ended it after the instance had already been used and stopped.
 
 ## Shutdown and cost control
 
@@ -125,4 +145,4 @@ brev ls --all
 
 Stopping retains the disk and incurs Brev's stated storage charge. Record the actual final status in the run log. Do not leave this H100 running for a local video render.
 
-For this run, the first status check after `brev stop` showed `STOPPING`; a later `brev ls --all` showed **`STOPPED`**. The final video render ran locally after shutdown.
+For the first run, the first status check after `brev stop` showed `STOPPING`; a later `brev ls --all` showed **`STOPPED`**. The second run also ended with a verified **`STOPPED`** status. Video renders ran locally after shutdown.
