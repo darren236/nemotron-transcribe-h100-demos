@@ -3,7 +3,7 @@ set -euo pipefail
 
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 FFMPEG_BIN="${FFMPEG_BIN:-$REPO_DIR/video/node_modules/@remotion/compositor-linux-x64-gnu/ffmpeg}"
-OUT_DIR="$REPO_DIR/docs/gifs"
+OUT_DIR="$REPO_DIR/site/gifs"
 mkdir -p "$OUT_DIR"
 
 render_gif() {

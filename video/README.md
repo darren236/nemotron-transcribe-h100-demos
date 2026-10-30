@@ -25,7 +25,7 @@ npm run typecheck
 npm run render
 ```
 
-`npm run render` calls the three individual scripts in `package.json`. The `NemotronCaptionClip` composition reads a clip's `--props` JSON and the corresponding WAV under `video/public/`. Its duration follows the input recording plus 0.4 seconds. The MP4s are H.264 video with AAC audio. [NVIDIA's model card](https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B) documents the word timestamp output used here.
+`npm run render` calls the three individual scripts in `package.json`. `scripts/build_gallery.py` checks and refreshes the matching WAV copies under `video/public/` from `assets/`. The `NemotronCaptionClip` composition reads a clip's `--props` JSON and its WAV from that folder. Its duration follows the input recording plus 0.4 seconds. The MP4s are H.264 video with AAC audio. [NVIDIA's model card](https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B) documents the word timestamp output used here.
 
 To regenerate the silent four-second GIF previews for the GitHub README:
 

@@ -15,4 +15,4 @@ This project used `nemotron-transcribe-v1` in the `nvaitc_workshop` organization
 
 This type matched NVIDIA's one-H100 BF16 recipe and could be stopped immediately after inference. The cheaper Hyperstack H100 option shown in the organization did not support stop/start.
 
-The exact setup and shutdown commands are in [docs/H100_RUNBOOK.md](docs/H100_RUNBOOK.md). No card details, login codes, or SSH material are in this repository.
+The exact setup and shutdown commands are in [H100_RUNBOOK.md](H100_RUNBOOK.md). No card details, login codes, or SSH material are in this repository.

@@ -59,6 +59,7 @@ def main() -> None:
             raise ValueError(f"{entry['id']}: invalid word order or timing")
         (ROOT / entry["srt"]).write_text(make_srt(words))
         video_audio = ROOT / "video/public" / audio_path.name
+        video_audio.parent.mkdir(parents=True, exist_ok=True)
         if not video_audio.exists() or sha256(video_audio) != result["audio_sha256"]:
             shutil.copyfile(audio_path, video_audio)
         clip_props = {

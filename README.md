@@ -1,6 +1,6 @@
 # Nemotron 3.5 Transcribe on one H100
 
-Three short demos using **real NVIDIA Nemotron 3.5 Transcribe inference** on one H100 80 GB. Watch word-synced captions on a conversation, a speech, and mission radio; then run the same model and audio yourself.
+Three short demos using real [NVIDIA Nemotron 3.5 Transcribe](https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B) inference on one H100 80 GB. The model has **34B parameters total, with 4.3B active**. Watch word-synced captions on a conversation, a speech, and mission radio; then run the same model and audio yourself.
 
 [**User Guide: run the model on vLLM**](#user-guide)
 
@@ -8,27 +8,35 @@ Three short demos using **real NVIDIA Nemotron 3.5 Transcribe inference** on one
 
 ### Two-speaker conversation · 34 seconds
 
-[![Animated preview of the two-speaker conversation](docs/gifs/conversation.gif)](https://darren236.github.io/nemotron-transcribe-h100-demos/conversation.html)
+[![Animated preview of the two-speaker conversation](site/gifs/conversation.gif)](https://darren236.github.io/nemotron-transcribe-h100-demos/conversation.html)
 
 An original two-voice dialogue shows speaker-tagged turns and word-by-word captions. [Play the full video](https://darren236.github.io/nemotron-transcribe-h100-demos/conversation.html) · [Run this example](#two-speaker-conversation)
 
 ### JFK speech · 11 seconds
 
-[![Animated preview of the JFK speech](docs/gifs/jfk.gif)](https://darren236.github.io/nemotron-transcribe-h100-demos/jfk.html)
+[![Animated preview of the JFK speech](site/gifs/jfk.gif)](https://darren236.github.io/nemotron-transcribe-h100-demos/jfk.html)
 
 A human-speech clip shows word timestamps and subtitles on the [JFK recording used by Whisper](https://github.com/openai/whisper/blob/main/tests/jfk.flac). [Play the full video](https://darren236.github.io/nemotron-transcribe-h100-demos/jfk.html) · [Run this example](#jfk-speech)
 
 ### Artemis mission radio · 22 seconds
 
-[![Animated preview of the Artemis mission radio](docs/gifs/artemis.gif)](https://darren236.github.io/nemotron-transcribe-h100-demos/artemis.html)
+[![Animated preview of the Artemis mission radio](site/gifs/artemis.gif)](https://darren236.github.io/nemotron-transcribe-h100-demos/artemis.html)
 
 The model transcribes a clip from the [NASA Artemis Audio Library](https://www.nasa.gov/artemisaudio/). The captions show its unedited output, including words that should be checked by listening. [Play the full video](https://darren236.github.io/nemotron-transcribe-h100-demos/artemis.html) · [Run this example](#artemis-mission-radio)
 
 ## User Guide
 
-This guide follows [NVIDIA's Nemotron 3.5 Transcribe model card](https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B) and the versions used for the videos. It runs the downloaded BF16 model through NeMo Speech and vLLM, rather than a NIM container.
+This guide follows [NVIDIA's Nemotron 3.5 Transcribe model card](https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B) and the versions used for the videos. It runs the downloaded BF16 model through NeMo Speech and vLLM.
 
-You need an Ubuntu H100 80 GB machine with a CUDA driver and enough disk for the model and environment. The recorded run used a 256 GiB disk; the model checkpoint was about 63 GiB. Run the commands on the H100. After cloning this repository, start in its root unless a step says to change directories.
+**Prerequisites for this BF16 setup:**
+
+| Resource | What you need |
+| --- | --- |
+| GPU | One NVIDIA H100 with **80 GB VRAM**. This is the configuration used for the videos and [NVIDIA's single-GPU recipe](https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B). |
+| Disk | Plan for a **256 GiB volume**, the size used in the recorded run. The checkpoint alone is **62.86 GiB**; the Python environment, download cache, and outputs need additional space. |
+| System | Ubuntu Linux, a working NVIDIA driver (`nvidia-smi` succeeds), `sudo` access, and internet access to GitHub, Hugging Face, and the `uv` installer. The commands below install the remaining packages. |
+
+Run the commands on the H100. After cloning this repository, start in its root unless a step says to change directories.
 
 ### 1. Install the runtime and download the model
 
@@ -96,7 +104,9 @@ Wait for the download to finish even if a full-sized `.incomplete` file appears.
 
 ### 2. Serve the model with vLLM
 
-Open **terminal A** on the H100 in this repository's root. Activate the environment, then start the server. The launcher runs `vllm serve` with the [one-H100 settings from NVIDIA](https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B); its [full command and flags are readable here](scripts/serve_h100.sh).
+Open **terminal A** on the H100 in this repository's root. Choose **one** launch method: the script below is the simplest way to reproduce these demos. The optional manual command after it starts the same vLLM server and replaces the script; do not run both.
+
+Activate the environment and run the launcher. It calls `vllm serve` with the [one-H100 settings from NVIDIA](https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B). Its [full command and flags are in the script](scripts/serve_h100.sh).
 
 ```bash
 # This script runs vllm serve with the required model and timestamp settings.
@@ -115,9 +125,9 @@ The launch settings do the following:
 | `--host 127.0.0.1 --port 8000` | Keeps the inference API on the H100's loopback interface. |
 
 <details>
-<summary>Run vLLM directly with the same settings</summary>
+<summary>Optional: start vLLM manually instead of using the script</summary>
 
-After activating the environment in terminal A, set the NeMo Speech plugin, audio limits, and V1 runner:
+Use this alternative if you want to run `vllm serve` yourself and see every flag. It replaces the launcher command above. After activating the environment in terminal A, set the NeMo Speech plugin, audio limits, and V1 runner:
 
 ```bash
 export VLLM_PLUGINS=nemo_speechlm
