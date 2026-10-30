@@ -40,6 +40,13 @@ This guide follows [NVIDIA's Nemotron 3.5 Transcribe model card](https://hugging
 
 Run the commands on the H100. After cloning this repository, start in its root unless a step says to change directories.
 
+The guide follows one path: prepare the H100 and download the checkpoint, serve it with vLLM in terminal A, then send audio and export captions in terminal B.
+
+<picture>
+  <source media="(max-width: 620px)" srcset="site/user-guide-flow-mobile.svg">
+  <img src="site/user-guide-flow.svg" alt="Methods figure for the User Guide. A: prepare an Ubuntu H100 80 GB machine, NeMo Speech, vLLM, and the BF16 checkpoint. B: keep the local vLLM server running in terminal A with CTC word timestamps. C: send a mono 16 kHz WAV in terminal B, save word-timed JSON, check it against the WAV, and export SRT captions.">
+</picture>
+
 ### 1. Install the runtime and download the model
 
 The pinned NeMo Speech commit and model revision below reproduce the versions used for these demos.

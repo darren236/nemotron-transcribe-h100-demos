@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="580" viewBox="0 0 960 580" role="img" aria-labelledby="title description">
+  <title id="title">Methods figure: from H100 setup to SRT captions</title>
+  <desc id="description">Panel A prepares an Ubuntu H100 80 GB machine with 256 GiB of disk, NeMo Speech, vLLM, and the BF16 model. Panel B runs the vLLM server with CTC timestamps in terminal A. Panel C sends a 16 kHz WAV in terminal B, saves a word-timed JSON transcript, verifies it against the WAV, and exports SRT captions.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M1 1 L8 5 L1 9" fill="none" stroke="#76B900" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect x="0.5" y="0.5" width="959" height="579" fill="#FFFFFF" stroke="#CED8C8"/>
+  <rect x="0" y="0" width="960" height="8" fill="#76B900"/>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#202820">
+    <text x="34" y="55" fill="#4C7600" font-size="18" font-weight="700">Fig. 2</text>
+    <text x="105" y="55" font-size="25" font-weight="600">User Guide: from one H100 to timed captions</text>
+    <path d="M34 81 H926" stroke="#263126" stroke-width="1.5"/>
+
+    <path d="M34 105 H307 M344 105 H616 M653 105 H926" stroke="#263126" stroke-width="2"/>
+    <rect x="34" y="118" width="37" height="37" fill="#76B900"/>
+    <rect x="344" y="118" width="37" height="37" fill="#76B900"/>
+    <rect x="653" y="118" width="37" height="37" fill="#76B900"/>
+    <text x="52.5" y="145" text-anchor="middle" fill="#FFFFFF" font-size="24" font-weight="700">A</text>
+    <text x="362.5" y="145" text-anchor="middle" fill="#FFFFFF" font-size="24" font-weight="700">B</text>
+    <text x="671.5" y="145" text-anchor="middle" fill="#FFFFFF" font-size="24" font-weight="700">C</text>
+    <text x="34" y="184" font-size="19" font-weight="600">Prepare the H100</text>
+    <text x="344" y="184" font-size="19" font-weight="600">Serve the model</text>
+    <text x="653" y="184" font-size="19" font-weight="600">Transcribe and export</text>
+
+    <path d="M313 298 H330" stroke="#76B900" stroke-width="2" marker-end="url(#arrow)"/>
+    <path d="M622 298 H639" stroke="#76B900" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <g font-size="17">
+      <text x="34" y="223" font-weight="600">1 × H100 80 GB</text>
+      <text x="34" y="248" fill="#526152">Ubuntu Linux · NVIDIA driver</text>
+      <path d="M34 264 H307" stroke="#D4DED1"/>
+      <text x="34" y="295" font-weight="600">256 GiB disk plan</text>
+      <text x="34" y="320" fill="#526152">Weights, cache, environment</text>
+      <path d="M34 336 H307" stroke="#D4DED1"/>
+      <text x="34" y="367" font-weight="600">NeMo Speech + vLLM</text>
+      <text x="34" y="392" fill="#526152">Pinned Python environment</text>
+      <path d="M34 408 H307" stroke="#D4DED1"/>
+      <text x="34" y="439" font-weight="600">BF16 checkpoint</text>
+      <text x="34" y="464" fill="#526152">62.86 GiB model download</text>
+    </g>
+
+    <text x="344" y="218" fill="#4C7600" font-size="15" font-weight="700">TERMINAL A · KEEP RUNNING</text>
+    <rect x="344.5" y="235.5" width="271" height="117" fill="#202820" stroke="#202820"/>
+    <rect x="344" y="235" width="6" height="118" fill="#76B900"/>
+    <text x="360" y="270" fill="#FFFFFF" font-size="17" font-family="Consolas, Menlo, monospace">serve_h100.sh</text>
+    <text x="360" y="299" fill="#CDE9B0" font-size="16" font-family="Consolas, Menlo, monospace">&lt;model-dir&gt;</text>
+    <text x="360" y="329" fill="#DCE6D9" font-size="15">Exact command in step 2</text>
+    <text x="344" y="390" font-size="17" font-weight="600">Nemotron 3.5 Transcribe</text>
+    <text x="344" y="417" fill="#526152" font-size="16">30B-A4B · BF16 · vLLM</text>
+    <text x="344" y="452" font-size="17" font-weight="600">Local API · 127.0.0.1:8000</text>
+    <text x="344" y="479" fill="#526152" font-size="16">CTC word timestamps enabled</text>
+
+    <text x="653" y="218" fill="#4C7600" font-size="15" font-weight="700">TERMINAL B · CLIENT</text>
+    <rect x="653.5" y="235.5" width="272" height="42" fill="#EEF6E7" stroke="#98B973"/>
+    <text x="668" y="263" font-size="17" font-weight="600">Mono 16 kHz PCM WAV</text>
+    <path d="M789 280 V296" stroke="#76B900" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="653" y="326" font-size="17" font-weight="600">scripts/transcribe.py</text>
+    <text x="653" y="352" fill="#526152" font-size="16">JSON: words · speakers · times</text>
+    <path d="M789 363 V379" stroke="#76B900" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="653" y="409" font-size="17" font-weight="600">scripts/export_srt.py</text>
+    <text x="653" y="435" fill="#526152" font-size="16">Checks the exact WAV by SHA-256</text>
+    <rect x="653.5" y="450.5" width="272" height="42" fill="#EEF6E7" stroke="#98B973"/>
+    <text x="668" y="478" font-size="17" font-weight="600">SRT captions</text>
+
+    <path d="M34 515 H926" stroke="#A9B9A2"/>
+    <text x="34" y="542" font-size="16"><tspan fill="#4C7600" font-weight="700">Method.</tspan> Install and download once; keep terminal A serving while terminal B sends each WAV.</text>
+    <text x="34" y="565" fill="#526152" font-size="16">The three bundled clips and your own converted audio follow the same JSON → SRT path.</text>
+  </g>
+</svg>
