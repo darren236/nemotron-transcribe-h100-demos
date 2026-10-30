@@ -24,7 +24,7 @@ A human-speech clip shows word timestamps and subtitles on the [JFK recording us
 
 [![Animated preview of the Artemis mission radio](site/gifs/artemis.gif)](https://darren236.github.io/nemotron-transcribe-h100-demos/artemis.html)
 
-The model transcribes a clip from the [NASA Artemis Audio Library](https://www.nasa.gov/artemisaudio/). The captions show its unedited output, including words that should be checked by listening. [Play the full video](https://darren236.github.io/nemotron-transcribe-h100-demos/artemis.html) · [Run this example](#artemis-mission-radio)
+This challenging clip from the [NASA Artemis Audio Library](https://www.nasa.gov/artemisaudio/) shows an imperfect result. The video keeps the model's unedited captions, including transcription errors you can compare with the audio. [Play the full video](https://darren236.github.io/nemotron-transcribe-h100-demos/artemis.html) · [Run this example](#artemis-mission-radio)
 
 ## User Guide
 
