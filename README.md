@@ -269,3 +269,22 @@ python3 scripts/export_srt.py runs/reproduced/new_conversation.json runs/reprodu
 | No `ctc_timestamps` or an alignment error | Check that `serve_h100.sh` enabled the V1 runner and CTC middleware; do not publish failed word timings as captions. |
 
 When finished, stop the server and stop the GPU instance in your cloud provider. For a Brev instance, run `brev stop <instance-name>` and verify its status with `brev ls --all`. The [detailed H100 runbook](docs/H100_RUNBOOK.md) records the full setup and observed fixes.
+
+## How the videos were made
+
+We transcribed each WAV on the H100 and saved the model's words, speaker tags, and CTC timestamps. `scripts/build_gallery.py` checks that each response matches its exact WAV before Remotion renders word-synced captions over the original audio. The GIFs are short, silent excerpts of the finished MP4s.
+
+```mermaid
+flowchart TD
+    A["Three WAV recordings"] --> B["Nemotron 3.5 Transcribe on H100"]
+    B --> C["Saved model JSON: words, speakers, timestamps"]
+    A --> D["Verify audio and result"]
+    C --> D
+    D --> E["Remotion renders captioned MP4s"]
+    E --> F["Full videos on GitHub Pages"]
+    E --> G["GIF previews in this README"]
+    classDef green fill:#76B900,stroke:#5A8900,color:#111111
+    class B,E green
+```
+
+See [video/README.md](video/README.md) for the commands to rebuild the videos and GIFs from the saved results.
