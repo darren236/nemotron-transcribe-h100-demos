@@ -27,6 +27,8 @@ npm run render
 
 `npm run render` calls the three individual scripts in `package.json`. `scripts/build_gallery.py` checks and refreshes the matching WAV copies under `video/public/` from `assets/`. The `NemotronCaptionClip` composition reads a clip's `--props` JSON and its WAV from that folder. Its duration follows the input recording plus 0.4 seconds. The MP4s are H.264 video with AAC audio. [NVIDIA's model card](https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B) documents the word timestamp output used here.
 
+The lockfile overrides Remotion's pinned Zod 4.5.4 with 4.6.7 to address [GHSA-mrhx-c7xc-m3w5](https://github.com/advisories/GHSA-mrhx-c7xc-m3w5). Remotion 4.0.539 reports a Zod version warning during rendering; the patched install passed the TypeScript check and a local render check. Keep the override until Remotion pins a patched Zod release.
+
 To regenerate the silent four-second GIF previews for the GitHub README:
 
 ```bash
