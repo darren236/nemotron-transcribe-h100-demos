@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="1160" viewBox="0 0 560 1160" role="img" aria-labelledby="title description">
+  <title id="title">Methods figure: how the three captioned demos were made</title>
+  <desc id="description">Panel A lists the three source WAV recordings. Panel B shows BF16 Nemotron 3.5 Transcribe inference through vLLM on an H100 80 GB. Panel C shows WAV and JSON verification, caption preparation, Remotion MP4 rendering, and FFmpeg GIF extraction.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M1 1 L8 5 L1 9" fill="none" stroke="#5B8A36" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect x="0.5" y="0.5" width="559" height="1159" fill="#FFFFFF" stroke="#D6DFD7"/>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#1F2A22">
+    <text x="26" y="47" fill="#4F7E27" font-size="23" font-weight="700">Fig. 1</text>
+    <text x="105" y="47" font-size="26" font-weight="600">How the three captioned</text>
+    <text x="105" y="77" font-size="26" font-weight="600">demos were made</text>
+    <path d="M26 98 H534" stroke="#2D3E31" stroke-width="1.5"/>
+
+    <path d="M26 119 H534" stroke="#2D3E31" stroke-width="2"/>
+    <text x="26" y="157" font-size="33" font-weight="600">A</text>
+    <text x="26" y="190" font-size="23" font-weight="600">Source recordings</text>
+    <g font-size="21">
+      <text x="26" y="232">Conversation</text><text x="527" y="232" text-anchor="end" fill="#5D7561" font-size="19">34 s WAV</text>
+      <path d="M26 249 H534" stroke="#C9D5CB"/>
+      <text x="26" y="281">JFK speech</text><text x="527" y="281" text-anchor="end" fill="#5D7561" font-size="19">11 s WAV</text>
+      <path d="M26 298 H534" stroke="#C9D5CB"/>
+      <text x="26" y="330">Artemis radio</text><text x="527" y="330" text-anchor="end" fill="#5D7561" font-size="19">22 s WAV</text>
+      <path d="M26 347 H534" stroke="#C9D5CB"/>
+    </g>
+    <text x="26" y="380" fill="#596B5D" font-size="19">The exact WAVs used in the videos.</text>
+    <path d="M280 389 V411" stroke="#5B8A36" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <path d="M26 431 H534" stroke="#2D3E31" stroke-width="2"/>
+    <text x="26" y="469" font-size="33" font-weight="600">B</text>
+    <text x="26" y="502" font-size="23" font-weight="600">Model inference</text>
+    <rect x="26.5" y="524.5" width="507" height="157" fill="#FFFFFF" stroke="#647B67"/>
+    <rect x="26" y="524" width="6" height="158" fill="#76B900"/>
+    <text x="48" y="559" font-size="23" font-weight="600">Nemotron 3.5 Transcribe</text>
+    <text x="48" y="589" font-size="23" font-weight="600">30B-A4B</text>
+    <text x="48" y="632" font-size="21" fill="#596B5D">BF16 · vLLM</text>
+    <text x="48" y="660" font-size="21" fill="#596B5D">1 × H100 80 GB</text>
+    <text x="26" y="714" font-size="19" fill="#596B5D">One request per WAV returns words,</text>
+    <text x="26" y="741" font-size="19" fill="#596B5D">speaker tags, and CTC timestamps.</text>
+    <path d="M280 751 V773" stroke="#5B8A36" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <path d="M26 793 H534" stroke="#2D3E31" stroke-width="2"/>
+    <text x="26" y="831" font-size="33" font-weight="600">C</text>
+    <text x="26" y="864" font-size="23" font-weight="600">Verification and render</text>
+    <g font-size="21">
+      <text x="26" y="903"><tspan fill="#4F7E27" font-weight="600">Check</tspan> JSON ↔ WAV hash</text>
+      <path d="M26 919 H534" stroke="#C9D5CB"/>
+      <text x="26" y="951"><tspan fill="#4F7E27" font-weight="600">Prepare</tspan> caption props</text>
+      <path d="M26 967 H534" stroke="#C9D5CB"/>
+      <text x="26" y="999"><tspan fill="#4F7E27" font-weight="600">Render</tspan> Remotion MP4</text>
+      <path d="M26 1015 H534" stroke="#C9D5CB"/>
+      <text x="26" y="1047"><tspan fill="#4F7E27" font-weight="600">Extract</tspan> four-second GIF</text>
+    </g>
+    <path d="M26 1073 H534" stroke="#ADBEAF"/>
+    <text x="26" y="1103" font-size="18"><tspan font-weight="600">Method.</tspan> Saved model output drives captions.</text>
+    <text x="26" y="1129" font-size="18" fill="#526455">Each MP4 plays the original WAV; its GIF is silent.</text>
+  </g>
+</svg>

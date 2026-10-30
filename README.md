@@ -274,8 +274,11 @@ When finished, stop the server and stop the GPU instance in your cloud provider.
 
 ## How the videos were made
 
-We transcribed each WAV on the H100 and saved the model's words, speaker tags, and CTC timestamps. `scripts/build_gallery.py` checks that each response matches its exact WAV before Remotion renders word-synced captions over the original audio. The GIFs are short, silent excerpts of the finished MP4s.
+Each source WAV was transcribed by the BF16 Nemotron 3.5 Transcribe model through vLLM on one H100 80 GB. We saved its words, speaker tags, and CTC timestamps. `scripts/build_gallery.py` verifies that each JSON response matches its original WAV by SHA-256 and prepares caption props. Remotion renders the MP4s with that same audio; FFmpeg extracts four-second, silent GIF previews.
 
-![Four-stage workflow: three WAV recordings, Nemotron inference on an H100, verified word-timed model output, and Remotion caption videos](site/video-workflow.svg)
+<picture>
+  <source media="(max-width: 620px)" srcset="site/video-workflow-mobile.svg">
+  <img src="site/video-workflow.svg" alt="Methods figure with three stages: A, the conversation, JFK, and Artemis WAVs; B, Nemotron 3.5 Transcribe inference through vLLM on an H100; C, WAV and JSON verification, caption preparation, Remotion MP4 rendering, and FFmpeg GIF extraction.">
+</picture>
 
 See [video/README.md](video/README.md) for the commands to rebuild the videos and GIFs from the saved results.
