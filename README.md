@@ -289,3 +289,9 @@ Each source WAV was transcribed by the BF16 Nemotron 3.5 Transcribe model throug
 </picture>
 
 See [video/README.md](video/README.md) for the commands to rebuild the videos and GIFs from the saved results.
+
+## License and media
+
+The original code, documentation, diagrams, and conversation script in this repository are available under the [MIT License](LICENSE). The license does not cover the audio files, rendered videos and previews, saved model responses, or third-party materials.
+
+The JFK recording comes from [OpenAI Whisper's test fixtures](https://github.com/openai/whisper/blob/main/tests/jfk.flac). The Artemis recording comes from [NASA's Artemis Audio Library](https://www.nasa.gov/artemisaudio/) and remains subject to [NASA's media usage guidelines](https://www.nasa.gov/nasa-brand-center/images-and-media/). The NVIDIA model weights are not in this repository; see the [model's OpenMDW-1.1 license](https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B/tree/main) before downloading or redistributing them. These sources are credited here without being relicensed by this project. No NASA or NVIDIA endorsement is implied.
