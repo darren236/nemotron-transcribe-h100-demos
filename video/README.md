@@ -34,7 +34,7 @@ cd ..
 bash scripts/make_gifs.sh
 ```
 
-The GIFs are excerpts of the three final MP4s. They contain no audio; each README GIF links to its own [GitHub Pages player](https://darren236.github.io/nemotron-transcribe-h100-demos/) for the full clip with sound.
+The GIFs are excerpts of the three final MP4s. They contain no audio; each preview in the root README links to its own GitHub Pages player for the full clip with sound.
 
 ## Checks
 

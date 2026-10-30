@@ -6,6 +6,8 @@ Three short demos using real [NVIDIA Nemotron 3.5 Transcribe](https://huggingfac
 
 ## Demo videos
 
+Open a preview in a new tab with Ctrl/Cmd-click (or long-press on mobile).
+
 ### Two-speaker conversation · 34 seconds
 
 [![Animated preview of the two-speaker conversation](site/gifs/conversation.gif)](https://darren236.github.io/nemotron-transcribe-h100-demos/conversation.html)
