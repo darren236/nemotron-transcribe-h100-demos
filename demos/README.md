@@ -1,6 +1,6 @@
 # Three real Nemotron transcription demos
 
-For H100 setup and one command per use case, start with the [README guide](../README.md#run-it-on-an-h100).
+For H100 setup and one command per use case, start with the [User Guide](../README.md#user-guide).
 
 The [live viewer](https://darren236.github.io/nemotron-transcribe-h100-demos/viewer.html) lets you switch among three recordings, search the transcript, and export SRT captions. Every listed JSON is a saved response from `nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B` on the `nvaitc_workshop` H100, with the raw vLLM response, CTC word timings, speaker tags, and a SHA-256 binding it to the exact WAV. The browser rechecks that hash before enabling playback. The recording switcher replays saved inference; it does not make a new GPU request on each click.
 

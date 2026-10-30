@@ -2,7 +2,7 @@
 
 Three short demos using **real NVIDIA Nemotron 3.5 Transcribe inference** on one H100 80 GB. Watch word-synced captions on a conversation, a speech, and mission radio; then run the same model and audio yourself.
 
-[**Watch all three videos**](https://darren236.github.io/nemotron-transcribe-h100-demos/) · [**Set up and run inference**](#run-it-on-an-h100)
+[**User Guide: run the model on vLLM**](#user-guide)
 
 ## Demo videos
 
@@ -24,7 +24,7 @@ A human-speech clip shows word timestamps and subtitles on the [JFK recording us
 
 The model transcribes a clip from the [NASA Artemis Audio Library](https://www.nasa.gov/artemisaudio/). The captions show its unedited output, including words that should be checked by listening. [Play the full video](https://darren236.github.io/nemotron-transcribe-h100-demos/artemis.html) · [Run this example](#artemis-mission-radio)
 
-## Run it on an H100
+## User Guide
 
 This guide follows [NVIDIA's Nemotron 3.5 Transcribe model card](https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B) and the versions used for the videos. It serves downloaded BF16 weights with open-source NeMo Speech and vLLM; these demos do not deploy a NIM container. It assumes an Ubuntu H100 80 GB machine with a CUDA driver, a checkout of **this repository on that machine**, and enough disk for the model and environment. The recorded run used a 256 GiB disk; the BF16 checkpoint was about 63 GiB. All commands below run on the H100, from this repository's root unless the command changes directories. The vLLM server stays on `127.0.0.1:8000`.
 
@@ -54,28 +54,46 @@ hf download nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B \
 
 The recorded `uv sync` selected Python 3.12.3 and vLLM 0.32.0. You can also run `bash scripts/setup_h100.sh` from this repository's root to perform the same pinned setup. Wait for `hf download` to finish even if a full-sized `.incomplete` file appears. The model checkpoint stays on the H100; it is not in this repository.
 
-### 2. Start the inference server
+### 2. Serve the model with vLLM
 
-Open a terminal in this repository's root on the H100. Keep that terminal open while you run the demos:
+Open a terminal on the H100, activate the environment installed above, and launch the downloaded checkpoint with vLLM. This is the command used for the demos:
 
 ```bash
-REPO_DIR="$PWD"
 cd ~/nemo-speech
 source .venv/bin/activate
-bash "$REPO_DIR/scripts/serve_h100.sh" "$PWD/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B"
+export VLLM_PLUGINS=nemo_speechlm
+export VLLM_MAX_AUDIO_DECODE_DURATION_S=3600
+export VLLM_MAX_AUDIO_CLIP_FILESIZE_MB=180
+export VLLM_USE_V2_MODEL_RUNNER=0
+
+vllm serve ./NVIDIA-Nemotron-3.5-Transcribe-30B-A4B \
+  --host 127.0.0.1 --port 8000 \
+  --served-model-name nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B \
+  --trust-remote-code --dtype bfloat16 --gpu-memory-utilization 0.94 \
+  --max-model-len 65536 --max-num-batched-tokens 4096 --max-num-seqs 192 \
+  --enable-chunked-prefill --no-enable-prefix-caching \
+  --use-replayssm --mamba-backend flashinfer --mamba-cache-mode none \
+  --mm-processor-cache-gb 0 --no-async-scheduling \
+  --limit-mm-per-prompt '{"audio":{"count":6,"length":120000000}}' \
+  --speculative-config '{"method":"mtp","num_speculative_tokens":8}' \
+  --reasoning-parser nemotron_v3 \
+  --trust-request-mm-kwargs \
+  --middleware nemo.collections.speechlm2.vllm.salm.ctc_serving.ctc_timestamp_middleware
 ```
 
-In a second H100 terminal, wait for the model to load and check readiness:
+Keep this terminal open. `VLLM_PLUGINS` loads NeMo Speech's model integration; the V1 runner and CTC middleware provide the word timestamps used in the demos. `--served-model-name` sets the model ID that clients send to vLLM. The remaining serving flags match [NVIDIA's one-H100 recipe](https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B). The same launch command is saved in [`scripts/serve_h100.sh`](scripts/serve_h100.sh) for reuse.
+
+In a second H100 terminal, wait for checkpoint loading and kernel warmup, then check that vLLM is ready:
 
 ```bash
 curl -fsS http://127.0.0.1:8000/v1/models
 ```
 
-Startup includes checkpoint loading and kernel warmup. The server command enables the V1 runner and CTC timestamp middleware needed for word timings.
+The server listens only on `127.0.0.1:8000`; the client script in the next step calls its OpenAI-compatible `/v1/chat/completions` endpoint on that same machine.
 
 ### 3. Transcribe the demo audio
 
-Open the second H100 terminal in this repository's root. The three input WAVs are included in `assets/`; the commands write **new** results under `runs/reproduced/`, leaving the showcased results untouched. `export_srt.py` verifies that each JSON matches its input WAV before making captions.
+Open the second H100 terminal in this repository's root. The three input WAVs are included in `assets/`; the commands write **new** results under `runs/reproduced/`, leaving the showcased results untouched. `transcribe.py` sends the WAV and speaker-tag prompt to vLLM, requests CTC word timestamps, and saves the model's response as JSON. `export_srt.py` verifies that each JSON matches its input WAV before making captions.
 
 #### Two-speaker conversation
 
