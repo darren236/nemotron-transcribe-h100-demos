@@ -1,5 +1,7 @@
 # Nemotron 3.5 Transcribe on one H100
 
+[![MIT License](site/mit-license-badge.svg)](LICENSE)
+
 Three short demos using real [NVIDIA Nemotron 3.5 Transcribe](https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B) inference on one H100 80 GB. The model has **34B parameters total, with 4.3B active**. Watch word-synced captions on a conversation, a speech, and mission radio; then run the same model and audio yourself.
 
 [**User Guide: run the model on vLLM**](#user-guide)
