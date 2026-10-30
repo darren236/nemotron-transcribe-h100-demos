@@ -276,17 +276,6 @@ When finished, stop the server and stop the GPU instance in your cloud provider.
 
 We transcribed each WAV on the H100 and saved the model's words, speaker tags, and CTC timestamps. `scripts/build_gallery.py` checks that each response matches its exact WAV before Remotion renders word-synced captions over the original audio. The GIFs are short, silent excerpts of the finished MP4s.
 
-```mermaid
-flowchart TD
-    A["Three WAV recordings"] --> B["Nemotron 3.5 Transcribe on H100"]
-    B --> C["Saved model JSON: words, speakers, timestamps"]
-    A --> D["Verify audio and result"]
-    C --> D
-    D --> E["Remotion renders captioned MP4s"]
-    E --> F["Full videos on GitHub Pages"]
-    E --> G["GIF previews in this README"]
-    classDef green fill:#76B900,stroke:#5A8900,color:#111111
-    class B,E green
-```
+![Four-stage workflow: three WAV recordings, Nemotron inference on an H100, verified word-timed model output, and Remotion caption videos](site/video-workflow.svg)
 
 See [video/README.md](video/README.md) for the commands to rebuild the videos and GIFs from the saved results.

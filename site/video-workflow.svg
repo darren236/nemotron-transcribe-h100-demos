@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430" role="img" aria-labelledby="title description">
+  <title id="title">How the three Nemotron Transcribe videos were made</title>
+  <desc id="description">Three WAV recordings are transcribed by Nemotron 3.5 Transcribe on an H100. The saved words, speakers, and timestamps are checked against the audio. Remotion then renders captioned MP4 videos and short GIF previews.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M1 1 L9 5 L1 9" fill="none" stroke="#76B900" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="430" rx="20" fill="#0D130F"/>
+  <rect x="36" y="36" width="7" height="31" fill="#76B900"/>
+  <text x="58" y="50" fill="#A9D85E" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="800" letter-spacing="3">THE DEMO PIPELINE</text>
+  <text x="58" y="87" fill="#F3F7F0" font-family="Inter, Arial, sans-serif" font-size="29" font-weight="750">Three recordings. Three real model results.</text>
+  <text x="58" y="116" fill="#B2C0B0" font-family="Inter, Arial, sans-serif" font-size="17">Each finished video uses the same audio that was sent to the model.</text>
+
+  <g fill="none" stroke="#76B900" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)">
+    <path d="M291 258 H316"/>
+    <path d="M585 258 H610"/>
+    <path d="M879 258 H904"/>
+  </g>
+
+  <g transform="translate(36 151)" font-family="Inter, Arial, sans-serif">
+    <rect width="246" height="213" rx="13" fill="#19231A" stroke="#40543A"/>
+    <path d="M13 1 H233" stroke="#76B900" stroke-width="3" stroke-linecap="round"/>
+    <text x="22" y="32" fill="#A9D85E" font-size="13" font-weight="800" letter-spacing="2">01 / SOURCE</text>
+    <text x="22" y="70" fill="#F3F7F0" font-size="25" font-weight="750">Audio clips</text>
+    <path d="M23 120 H223" stroke="#3C5936" stroke-width="2"/>
+    <g fill="none" stroke="#76B900" stroke-width="4" stroke-linecap="round">
+      <path d="M37 110 V130 M56 101 V139 M75 91 V149 M94 105 V135 M113 85 V155 M132 97 V143 M151 108 V132 M170 89 V151 M189 103 V137 M208 112 V128"/>
+    </g>
+    <text x="22" y="178" fill="#F3F7F0" font-size="16" font-weight="650">Conversation · JFK · Artemis</text>
+    <text x="22" y="198" fill="#B2C0B0" font-size="14">Three exact WAV recordings</text>
+  </g>
+
+  <g transform="translate(330 151)" font-family="Inter, Arial, sans-serif">
+    <rect width="246" height="213" rx="13" fill="#19231A" stroke="#40543A"/>
+    <path d="M13 1 H233" stroke="#76B900" stroke-width="3" stroke-linecap="round"/>
+    <text x="22" y="32" fill="#A9D85E" font-size="13" font-weight="800" letter-spacing="2">02 / INFERENCE</text>
+    <text x="22" y="70" fill="#F3F7F0" font-size="25" font-weight="750">On the H100</text>
+    <rect x="22" y="91" width="70" height="65" rx="8" fill="#233B20" stroke="#76B900" stroke-width="2"/>
+    <rect x="38" y="106" width="38" height="35" rx="4" fill="#76B900"/>
+    <text x="42" y="130" fill="#0D130F" font-size="15" font-weight="900">GPU</text>
+    <text x="106" y="116" fill="#F3F7F0" font-size="20" font-weight="750">80 GB</text>
+    <text x="106" y="139" fill="#B2C0B0" font-size="15">VRAM · BF16</text>
+    <text x="22" y="178" fill="#F3F7F0" font-size="16" font-weight="650">Nemotron 3.5 Transcribe</text>
+    <text x="22" y="198" fill="#B2C0B0" font-size="14">One model request per clip</text>
+  </g>
+
+  <g transform="translate(624 151)" font-family="Inter, Arial, sans-serif">
+    <rect width="246" height="213" rx="13" fill="#19231A" stroke="#40543A"/>
+    <path d="M13 1 H233" stroke="#76B900" stroke-width="3" stroke-linecap="round"/>
+    <text x="22" y="32" fill="#A9D85E" font-size="13" font-weight="800" letter-spacing="2">03 / VERIFY</text>
+    <text x="22" y="70" fill="#F3F7F0" font-size="25" font-weight="750">Model output</text>
+    <rect x="22" y="91" width="202" height="68" rx="7" fill="#0E160F" stroke="#40543A"/>
+    <text x="35" y="116" fill="#A9D85E" font-size="14" font-weight="750">00:00.46</text>
+    <text x="126" y="116" fill="#F3F7F0" font-size="14">Houston,</text>
+    <path d="M35 125 H211" stroke="#334635"/>
+    <text x="35" y="146" fill="#A9D85E" font-size="14" font-weight="750">00:00.80</text>
+    <text x="126" y="146" fill="#F3F7F0" font-size="14">we</text>
+    <text x="22" y="178" fill="#F3F7F0" font-size="16" font-weight="650">Words · speakers · times</text>
+    <text x="22" y="198" fill="#B2C0B0" font-size="14">Checked against the WAV hash</text>
+  </g>
+
+  <g transform="translate(918 151)" font-family="Inter, Arial, sans-serif">
+    <rect width="246" height="213" rx="13" fill="#19231A" stroke="#40543A"/>
+    <path d="M13 1 H233" stroke="#76B900" stroke-width="3" stroke-linecap="round"/>
+    <text x="22" y="32" fill="#A9D85E" font-size="13" font-weight="800" letter-spacing="2">04 / RENDER</text>
+    <text x="22" y="70" fill="#F3F7F0" font-size="25" font-weight="750">Caption video</text>
+    <rect x="22" y="91" width="202" height="68" rx="7" fill="#0E160F" stroke="#40543A"/>
+    <path d="M101 109 L101 141 L128 125 Z" fill="#76B900"/>
+    <rect x="71" y="145" width="104" height="3" rx="1.5" fill="#A9D85E"/>
+    <text x="22" y="178" fill="#F3F7F0" font-size="16" font-weight="650">Remotion + original audio</text>
+    <text x="22" y="198" fill="#B2C0B0" font-size="14">MP4 videos · GIF previews</text>
+  </g>
+
+  <path d="M36 389 H1164" stroke="#344435"/>
+  <text x="36" y="411" fill="#A9D85E" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">WATCH</text>
+  <text x="104" y="411" fill="#B2C0B0" font-family="Inter, Arial, sans-serif" font-size="15">Full MP4s on GitHub Pages</text>
+  <text x="566" y="411" fill="#A9D85E" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">PREVIEW</text>
+  <text x="663" y="411" fill="#B2C0B0" font-family="Inter, Arial, sans-serif" font-size="15">Short GIFs in this README</text>
+</svg>
